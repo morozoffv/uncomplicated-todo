@@ -12,4 +12,7 @@ class NetworkConfiguration {
     static var baseURL: String {
         return "http://demo6230090.mockable.io"
     }
+    
+    static let contentTypeKey: String = "Content-Type"
+    static let contentTypeValue: String = "application/json"
 }

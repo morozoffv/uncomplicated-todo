@@ -14,7 +14,6 @@ enum NetworkError: Int, Error {
     case forbidden = 403
     case notFound = 404
     case noResponse
-    case serializationError
     case dataIsEmpty
     case urlNotFormed
     case unknown
@@ -31,8 +30,6 @@ enum NetworkError: Int, Error {
             return "Not found"
         case .unknown:
             return "Unknown"
-        case .serializationError:
-            return "Serialization error"
         case .urlNotFormed:
             return "URL not formed"
         case .dataIsEmpty:

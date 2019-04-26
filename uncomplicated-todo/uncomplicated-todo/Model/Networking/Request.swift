@@ -8,9 +8,10 @@
 
 import Foundation
 
-//TODO: add query with headers when it will be necessary
 struct Request {
     var method: HTTPMethod
+    var query: [String : Any]?
+    var headers: [String : String]
     var networkAction: NetworkAction
 }
 
@@ -22,4 +23,6 @@ enum HTTPMethod: String {
 enum NetworkAction: String {
     case history = "history"
     case tasks = "tasks"
+    case addTask = "add-task"
+    case addToHistory = "add-to-history"
 }
