@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+protocol NetworkManaging {
+    func requestHistory(completion: @escaping (Result<[HistoryItem], NetworkManagerError>) -> Void)
+    func requestTasks(completion: @escaping (Result<[Task], NetworkManagerError>) -> Void)
+    func addTask(completion: @escaping (Result<Void, NetworkManagerError>) -> Void)
+    func moveToHistory(completion: @escaping (Result<Void, NetworkManagerError>) -> Void)
+}
+
+enum NetworkManagerError: Error {
+    case parsingError
+    case networkError(NetworkError)
+}
