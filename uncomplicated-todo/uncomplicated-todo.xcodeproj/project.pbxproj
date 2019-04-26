@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F50496482272C1A2007743CA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50496472272C1A2007743CA /* NetworkManager.swift */; };
+		F504964A2272C1AC007743CA /* NetworkManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50496492272C1AC007743CA /* NetworkManaging.swift */; };
+		F504964D2272C328007743CA /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F504964C2272C328007743CA /* Request.swift */; };
+		F504964F2272C3A2007743CA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F504964E2272C3A2007743CA /* Response.swift */; };
+		F50496512272C6AA007743CA /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50496502272C6AA007743CA /* NetworkConfiguration.swift */; };
+		F5068F1A22722AF600BEC973 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5068F1922722AF600BEC973 /* Networking.swift */; };
+		F5068F1C22722B0100BEC973 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5068F1B22722B0100BEC973 /* Network.swift */; };
 		F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5987502226F96B1007E93E4 /* AppDelegate.swift */; };
 		F5987505226F96B1007E93E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5987504226F96B1007E93E4 /* ViewController.swift */; };
 		F5987508226F96B1007E93E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5987506226F96B1007E93E4 /* Main.storyboard */; };
@@ -16,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F50496472272C1A2007743CA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F50496492272C1AC007743CA /* NetworkManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManaging.swift; sourceTree = "<group>"; };
+		F504964C2272C328007743CA /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		F504964E2272C3A2007743CA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		F50496502272C6AA007743CA /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
+		F5068F1922722AF600BEC973 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		F5068F1B22722B0100BEC973 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		F59874FF226F96B0007E93E4 /* uncomplicated-todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uncomplicated-todo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5987502226F96B1007E93E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5987504226F96B1007E93E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +51,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5049645227234AA007743CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F5049646227234BF007743CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F504964B2272C30F007743CA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F5068F1922722AF600BEC973 /* Networking.swift */,
+				F5068F1B22722B0100BEC973 /* Network.swift */,
+				F50496472272C1A2007743CA /* NetworkManager.swift */,
+				F50496492272C1AC007743CA /* NetworkManaging.swift */,
+				F504964C2272C328007743CA /* Request.swift */,
+				F504964E2272C3A2007743CA /* Response.swift */,
+				F50496502272C6AA007743CA /* NetworkConfiguration.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F5068F1822722ADB00BEC973 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F504964B2272C30F007743CA /* Networking */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F59874F6226F96B0007E93E4 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +106,9 @@
 		F5987501226F96B0007E93E4 /* uncomplicated-todo */ = {
 			isa = PBXGroup;
 			children = (
+				F5049646227234BF007743CA /* View */,
+				F5049645227234AA007743CA /* ViewModel */,
+				F5068F1822722ADB00BEC973 /* Model */,
 				F5987502226F96B1007E93E4 /* AppDelegate.swift */,
 				F5987504226F96B1007E93E4 /* ViewController.swift */,
 				F5987506226F96B1007E93E4 /* Main.storyboard */,
@@ -138,9 +191,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50496482272C1A2007743CA /* NetworkManager.swift in Sources */,
+				F50496512272C6AA007743CA /* NetworkConfiguration.swift in Sources */,
+				F504964D2272C328007743CA /* Request.swift in Sources */,
+				F504964A2272C1AC007743CA /* NetworkManaging.swift in Sources */,
+				F5068F1C22722B0100BEC973 /* Network.swift in Sources */,
 				F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */,
 				F5987505226F96B1007E93E4 /* ViewController.swift in Sources */,
 				F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */,
+				F5068F1A22722AF600BEC973 /* Networking.swift in Sources */,
+				F504964F2272C3A2007743CA /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
