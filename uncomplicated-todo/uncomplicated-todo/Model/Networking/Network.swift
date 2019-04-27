@@ -43,7 +43,7 @@ class Network: Networking {
     
     func buildUrlRequest(_ request: Request) -> URLRequest? {
         //TODO: add url builder if requests will become more complicated
-        guard let url = URL(string: "\(NetworkConfiguration.baseURL)/\(request.networkAction)") else {
+        guard let url = URL(string: "\(NetworkConfiguration.baseUrl)/\(request.networkAction)") else {
             return nil
         }
         

@@ -9,7 +9,7 @@
 import Foundation
 
 class NetworkConfiguration {
-    static var baseURL: String {
+    static var baseUrl: String {
         return "http://demo6230090.mockable.io"
     }
     
