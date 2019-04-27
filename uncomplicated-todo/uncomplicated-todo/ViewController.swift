@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  uncomplicated-todo
 //
-//  Created by Vlad on 23/04/2019.
+//  Created by Vladislav Morozov on 23/04/2019.
 //  Copyright © 2019 misshapes. All rights reserved.
 //
 
@@ -14,18 +14,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkManager.requestHistory { result in
+        networkManager.requestTodos { result in
             switch result {
-            case .success(let history):
-                print(history)
+            case .success(let todos):
+                print(todos)
             case .failure(let error):
                 print(error)
             }
         }
-        
-        
     }
-
-
 }
 

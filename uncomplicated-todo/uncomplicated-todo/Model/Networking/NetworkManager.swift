@@ -21,19 +21,11 @@ class NetworkManager: NetworkManaging {
         network.execute(request: request) { result in
             switch result {
             case .success(let historyData):
-//                guard let history = try? Parser<[HistoryItem]>.decode(historyData) else {
-//                    completion(.failure(.parsingError))
-//                    return
-//                }
-                
-                do {
-                    let history = try Parser<[HistoryItem]>.decode(historyData)
-                    completion(.success(history))
-                } catch {
-                   print(error)
+                guard let history = try? Parser<[HistoryItem]>.decode(historyData) else {
+                    completion(.failure(.parsingError))
+                    return
                 }
-                
-//                completion(.success(history))
+                completion(.success(history))
                 
             case .failure(let error):
                 completion(.failure(.networkError(error)))
@@ -42,15 +34,29 @@ class NetworkManager: NetworkManaging {
         }
     }
     
-    func requestTasks(completion: @escaping (Result<[Task], NetworkManagerError>) -> Void) {
-        
+    func requestTodos(completion: @escaping (Result<[Todo], NetworkManagerError>) -> Void) {
+        let request = Request(method: .get, query: nil, headers: [:], networkAction: .todos)
+        network.execute(request: request) { result in
+            switch result {
+            case .success(let historyData):
+                guard let history = try? Parser<[Todo]>.decode(historyData) else {
+                    completion(.failure(.parsingError))
+                    return
+                }
+                completion(.success(history))
+                
+            case .failure(let error):
+                completion(.failure(.networkError(error)))
+                return
+            }
+        }
     }
     
-    func addTask(completion: @escaping (Result<Void, NetworkManagerError>) -> Void) {
-        
+    func addTodo(completion: @escaping (Result<Void, NetworkManagerError>) -> Void) {
+        //TODO: implement
     }
     
     func moveToHistory(completion: @escaping (Result<Void, NetworkManagerError>) -> Void) {
-        
+        //TODO: implement
     }
 }

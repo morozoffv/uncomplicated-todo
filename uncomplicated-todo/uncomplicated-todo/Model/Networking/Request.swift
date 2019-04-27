@@ -19,10 +19,3 @@ enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
 }
-
-enum NetworkAction: String {
-    case history = "history"
-    case tasks = "tasks"
-    case addTask = "add-task"
-    case addToHistory = "add-to-history"
-}

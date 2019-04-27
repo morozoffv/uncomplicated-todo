@@ -1,5 +1,5 @@
 //
-//  Task.swift
+//  Todo.swift
 //  uncomplicated-todo
 //
 //  Created by Vladislav Morozov on 26/04/2019.
@@ -14,27 +14,10 @@ enum Priority: Int, Decodable {
     case highest = 2
 }
 
-struct Task: Decodable {
+struct Todo: Decodable {
     let id: UUID
     let name: String
     let priority: Priority
     let dueDate: Date
     let creationDate: Date
-    
-//    enum CodingKeys: String, CodingKey {
-//        case id
-//        case name
-//        case priority
-//        case dueDate = "due_date"
-//        case creationDate = "creation_date"
-//    }
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        self.id = try container.decode(UUID.self, forKey: .id)
-//        self.name = try container.decode(String.self, forKey: .name)
-//        self.priority = try container.decode(Priority.self, forKey: .priority)
-//        self.dueDate = try container.decode(Date.self, forKey: .dueDate)
-//        self.creationDate = try container.decode(Date.self, forKey: .creationDate)
-//    }
 }

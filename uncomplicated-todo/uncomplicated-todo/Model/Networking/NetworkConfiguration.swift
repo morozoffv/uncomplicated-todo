@@ -9,10 +9,18 @@
 import Foundation
 
 class NetworkConfiguration {
+    
     static var baseUrl: String {
         return "https://demo6230090.mockable.io"
     }
     
     static let contentTypeKey: String = "Content-Type"
     static let contentTypeValue: String = "application/json"
+}
+
+enum NetworkAction: String {
+    case history = "history"
+    case todos = "todos"
+    case addTask = "add-task"
+    case addToHistory = "add-to-history"
 }
