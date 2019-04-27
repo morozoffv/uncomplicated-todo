@@ -14,6 +14,7 @@
 		F50496512272C6AA007743CA /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50496502272C6AA007743CA /* NetworkConfiguration.swift */; };
 		F5068F1A22722AF600BEC973 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5068F1922722AF600BEC973 /* Networking.swift */; };
 		F5068F1C22722B0100BEC973 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5068F1B22722B0100BEC973 /* Network.swift */; };
+		F50752142274A85700347361 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50752132274A85700347361 /* Container.swift */; };
 		F5085B16227394D600144515 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B15227394D600144515 /* Task.swift */; };
 		F5085B18227395BC00144515 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B17227395BC00144515 /* HistoryItem.swift */; };
 		F5085B1A227395FB00144515 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B19227395FB00144515 /* User.swift */; };
@@ -34,6 +35,7 @@
 		F50496502272C6AA007743CA /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		F5068F1922722AF600BEC973 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		F5068F1B22722B0100BEC973 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		F50752132274A85700347361 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		F5085B15227394D600144515 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F5085B17227395BC00144515 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
 		F5085B19227395FB00144515 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				F5085B1B2273965400144515 /* Entity */,
 				F504964B2272C30F007743CA /* Networking */,
+				F50752132274A85700347361 /* Container.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				F504964A2272C1AC007743CA /* NetworkManaging.swift in Sources */,
 				F5068F1C22722B0100BEC973 /* Network.swift in Sources */,
 				F5085B1D2273A91200144515 /* Parser.swift in Sources */,
+				F50752142274A85700347361 /* Container.swift in Sources */,
 				F5085B18227395BC00144515 /* HistoryItem.swift in Sources */,
 				F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */,
 				F5987505226F96B1007E93E4 /* ViewController.swift in Sources */,
