@@ -9,10 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private let networkManager = NetworkManager(network: Network())
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        networkManager.requestHistory { result in
+            switch result {
+            case .success(let history):
+                print(history)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        
     }
 
 

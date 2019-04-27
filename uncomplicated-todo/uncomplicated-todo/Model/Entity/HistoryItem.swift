@@ -10,7 +10,7 @@ import Foundation
 
 struct HistoryItem: Decodable {
     let task: Task
-    let completedDate: Date
+    let doneAt: Date
     
 //    enum CodingKeys: String, CodingKey {
 //        case task

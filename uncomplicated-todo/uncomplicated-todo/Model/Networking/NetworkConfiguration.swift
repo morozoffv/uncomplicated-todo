@@ -10,7 +10,7 @@ import Foundation
 
 class NetworkConfiguration {
     static var baseUrl: String {
-        return "http://demo6230090.mockable.io"
+        return "https://demo6230090.mockable.io"
     }
     
     static let contentTypeKey: String = "Content-Type"
