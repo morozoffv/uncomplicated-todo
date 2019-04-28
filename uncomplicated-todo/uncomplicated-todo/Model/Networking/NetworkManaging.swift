@@ -9,10 +9,9 @@
 import Foundation
 
 protocol NetworkManaging {
-    func requestHistory(completion: @escaping (Result<[HistoryItem], NetworkManagerError>) -> Void)
     func requestTodos(completion: @escaping (Result<[Todo], NetworkManagerError>) -> Void)
     func addTodo(completion: @escaping (Result<Void, NetworkManagerError>) -> Void)
-    func moveToHistory(completion: @escaping (Result<Void, NetworkManagerError>) -> Void)
+    func completeTodo(completion: @escaping (Result<Void, NetworkManagerError>) -> Void)
 }
 
 enum NetworkManagerError: Error {

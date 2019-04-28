@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F50066E22275EB64000569A5 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50066E12275EB64000569A5 /* Todo.swift */; };
 		F50496482272C1A2007743CA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50496472272C1A2007743CA /* NetworkManager.swift */; };
 		F504964A2272C1AC007743CA /* NetworkManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50496492272C1AC007743CA /* NetworkManaging.swift */; };
 		F504964D2272C328007743CA /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F504964C2272C328007743CA /* Request.swift */; };
@@ -15,12 +16,7 @@
 		F5068F1A22722AF600BEC973 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5068F1922722AF600BEC973 /* Networking.swift */; };
 		F5068F1C22722B0100BEC973 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5068F1B22722B0100BEC973 /* Network.swift */; };
 		F50752172274C9F800347361 /* TodoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50752162274C9F800347361 /* TodoStorage.swift */; };
-		F50752192274CA0400347361 /* HistoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50752182274CA0400347361 /* HistoryStorage.swift */; };
 		F507521B2274CA1700347361 /* TodoStoraging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F507521A2274CA1700347361 /* TodoStoraging.swift */; };
-		F507521D2274CA2100347361 /* HistoryStoraging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F507521C2274CA2100347361 /* HistoryStoraging.swift */; };
-		F507521F2274CC9300347361 /* Storaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F507521E2274CC9300347361 /* Storaging.swift */; };
-		F5085B16227394D600144515 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B15227394D600144515 /* Task.swift */; };
-		F5085B18227395BC00144515 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B17227395BC00144515 /* HistoryItem.swift */; };
 		F5085B1A227395FB00144515 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B19227395FB00144515 /* User.swift */; };
 		F5085B1D2273A91200144515 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B1C2273A91200144515 /* Parser.swift */; };
 		F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5987502226F96B1007E93E4 /* AppDelegate.swift */; };
@@ -32,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F50066E12275EB64000569A5 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		F50496472272C1A2007743CA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F50496492272C1AC007743CA /* NetworkManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManaging.swift; sourceTree = "<group>"; };
 		F504964C2272C328007743CA /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -40,12 +37,7 @@
 		F5068F1922722AF600BEC973 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		F5068F1B22722B0100BEC973 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		F50752162274C9F800347361 /* TodoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoStorage.swift; sourceTree = "<group>"; };
-		F50752182274CA0400347361 /* HistoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStorage.swift; sourceTree = "<group>"; };
 		F507521A2274CA1700347361 /* TodoStoraging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoStoraging.swift; sourceTree = "<group>"; };
-		F507521C2274CA2100347361 /* HistoryStoraging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStoraging.swift; sourceTree = "<group>"; };
-		F507521E2274CC9300347361 /* Storaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storaging.swift; sourceTree = "<group>"; };
-		F5085B15227394D600144515 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		F5085B17227395BC00144515 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
 		F5085B19227395FB00144515 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F5085B1C2273A91200144515 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		F59874FF226F96B0007E93E4 /* uncomplicated-todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uncomplicated-todo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,10 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				F50752162274C9F800347361 /* TodoStorage.swift */,
-				F50752182274CA0400347361 /* HistoryStorage.swift */,
 				F507521A2274CA1700347361 /* TodoStoraging.swift */,
-				F507521C2274CA2100347361 /* HistoryStoraging.swift */,
-				F507521E2274CC9300347361 /* Storaging.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -123,9 +112,8 @@
 		F5085B1B2273965400144515 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				F5085B15227394D600144515 /* Task.swift */,
-				F5085B17227395BC00144515 /* HistoryItem.swift */,
 				F5085B19227395FB00144515 /* User.swift */,
+				F50066E12275EB64000569A5 /* Todo.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -238,21 +226,17 @@
 				F50496482272C1A2007743CA /* NetworkManager.swift in Sources */,
 				F50496512272C6AA007743CA /* NetworkConfiguration.swift in Sources */,
 				F504964D2272C328007743CA /* Request.swift in Sources */,
+				F50066E22275EB64000569A5 /* Todo.swift in Sources */,
 				F504964A2272C1AC007743CA /* NetworkManaging.swift in Sources */,
 				F5068F1C22722B0100BEC973 /* Network.swift in Sources */,
-				F50752192274CA0400347361 /* HistoryStorage.swift in Sources */,
-				F507521F2274CC9300347361 /* Storaging.swift in Sources */,
 				F50752172274C9F800347361 /* TodoStorage.swift in Sources */,
 				F5085B1D2273A91200144515 /* Parser.swift in Sources */,
-				F507521D2274CA2100347361 /* HistoryStoraging.swift in Sources */,
-				F5085B18227395BC00144515 /* HistoryItem.swift in Sources */,
 				F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */,
 				F5987505226F96B1007E93E4 /* ViewController.swift in Sources */,
 				F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */,
 				F5068F1A22722AF600BEC973 /* Networking.swift in Sources */,
 				F504964F2272C3A2007743CA /* Response.swift in Sources */,
 				F507521B2274CA1700347361 /* TodoStoraging.swift in Sources */,
-				F5085B16227394D600144515 /* Task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

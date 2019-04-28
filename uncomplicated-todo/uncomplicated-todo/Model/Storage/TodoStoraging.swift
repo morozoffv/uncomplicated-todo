@@ -8,6 +8,9 @@
 
 import Foundation
 
-protocol TodoStoraging: Storaging {
+protocol TodoStoraging {
+    func add()
+    func remove()
+    func getAll()
     func edit()
 }

@@ -16,24 +16,6 @@ class NetworkManager: NetworkManaging {
         self.network = network
     }
     
-    func requestHistory(completion: @escaping (Result<[HistoryItem], NetworkManagerError>) -> Void) {
-        let request = Request(method: .get, query: nil, headers: [:], networkAction: .history)
-        network.execute(request: request) { result in
-            switch result {
-            case .success(let historyData):
-                guard let history = try? Parser<[HistoryItem]>.decode(historyData) else {
-                    completion(.failure(.parsingError))
-                    return
-                }
-                completion(.success(history))
-                
-            case .failure(let error):
-                completion(.failure(.networkError(error)))
-                return
-            }
-        }
-    }
-    
     func requestTodos(completion: @escaping (Result<[Todo], NetworkManagerError>) -> Void) {
         let request = Request(method: .get, query: nil, headers: [:], networkAction: .todos)
         network.execute(request: request) { result in
@@ -56,7 +38,7 @@ class NetworkManager: NetworkManaging {
         //TODO: implement
     }
     
-    func moveToHistory(completion: @escaping (Result<Void, NetworkManagerError>) -> Void) {
+    func completeTodo(completion: @escaping (Result<Void, NetworkManagerError>) -> Void) {
         //TODO: implement
     }
 }
