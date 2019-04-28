@@ -9,6 +9,13 @@
 import Foundation
 
 class HistoryStorage: HistoryStoraging {
+    
+    private let networkManager: NetworkManaging
+    
+    init(networkManager: NetworkManaging) {
+        self.networkManager = networkManager
+    }
+
     func removeAll() {
         
     }

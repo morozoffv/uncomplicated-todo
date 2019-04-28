@@ -9,19 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    typealias DIFactory = HistoryStorageFactory & TodoStorageFactory
+    private let factory: DIFactory
     
-    private let networkManager = NetworkManager(network: Network())
-
+    private lazy var historyStorage: HistoryStoraging = factory.makeHistoryStorage()
+    private lazy var todoStorage: TodoStoraging = factory.makeTodoStorage()
+    
+    init(factory: DIFactory) {
+        self.factory = factory
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkManager.requestTodos { result in
-            switch result {
-            case .success(let todos):
-                print(todos)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        view.backgroundColor = .white
     }
 }
+
 

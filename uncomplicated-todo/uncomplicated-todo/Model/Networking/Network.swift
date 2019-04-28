@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Network: Networking {
+final class Network: Networking {
     func execute(request: Request, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
