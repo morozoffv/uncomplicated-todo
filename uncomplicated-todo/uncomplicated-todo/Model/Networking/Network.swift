@@ -18,7 +18,7 @@ class Network: Networking {
             return
         }
         
-        let task = session.dataTask(with: urlRequest) { data, response, error in
+        session.dataTask(with: urlRequest) { data, response, error in
             guard let response = response as? HTTPURLResponse else {
                 completion(.failure(NetworkError.noResponse))
                 return
@@ -36,8 +36,8 @@ class Network: Networking {
             
             completion(.success(data))
         }
-        
-        task.resume()
+        .resume()
+
         session.finishTasksAndInvalidate()
     }
     
