@@ -10,9 +10,12 @@ import Foundation
 
 //Here we contain single instances
 class Container {
+    private static let modelName = "uncomplicated_todo"
+    
     private lazy var network: Networking = Network()
     private lazy var networkManager: NetworkManaging = NetworkManager(network: network)
-    private lazy var todoStorage: TodoStoraging = TodoStorage(networkManager: networkManager)
+    private lazy var persistentStorage: CoreDataStack = CoreDataStack(modelName: Container.modelName)
+    private lazy var todoStorage: TodoStoraging = TodoStorage(networkManager: networkManager, persistentStorage: persistentStorage)
 }
 
 protocol TodoStorageFactory {

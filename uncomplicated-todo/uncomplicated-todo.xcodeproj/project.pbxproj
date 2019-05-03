@@ -28,6 +28,7 @@
 		F5AFA6222274F0FB0063FD7D /* DIFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AFA6212274F0FB0063FD7D /* DIFactories.swift */; };
 		F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9B8227C4AC200D70618 /* TodoCell.swift */; };
 		F5E0B9BB227C772E00D70618 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */; };
+		F5E0B9BE227CA14C00D70618 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9BD227CA14C00D70618 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		F5AFA6212274F0FB0063FD7D /* DIFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIFactories.swift; sourceTree = "<group>"; };
 		F5E0B9B8227C4AC200D70618 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		F5E0B9BD227CA14C00D70618 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		F5068F1822722ADB00BEC973 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F5E0B9BC227CA13700D70618 /* Persistence */,
 				F50752152274C98100347361 /* Storage */,
 				F5085B1B2273965400144515 /* Entity */,
 				F504964B2272C30F007743CA /* Networking */,
@@ -166,6 +169,14 @@
 				F5AFA6212274F0FB0063FD7D /* DIFactories.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		F5E0B9BC227CA13700D70618 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				F5E0B9BD227CA14C00D70618 /* CoreDataStack.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +264,7 @@
 				F5987505226F96B1007E93E4 /* ViewController.swift in Sources */,
 				F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */,
 				F5068F1A22722AF600BEC973 /* Networking.swift in Sources */,
+				F5E0B9BE227CA14C00D70618 /* CoreDataStack.swift in Sources */,
 				F504964F2272C3A2007743CA /* Response.swift in Sources */,
 				F507521B2274CA1700347361 /* TodoStoraging.swift in Sources */,
 				F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */,

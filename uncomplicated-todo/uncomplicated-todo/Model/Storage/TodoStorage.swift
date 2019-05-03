@@ -11,9 +11,12 @@ import Foundation
 class TodoStorage: TodoStoraging {
     
     private let networkManager: NetworkManaging
+    private let persistentStorage: CoreDataStack
     
-    init(networkManager: NetworkManaging) {
+    //TODO: replace CoreDataStack with protocol
+    init(networkManager: NetworkManaging, persistentStorage: CoreDataStack) {
         self.networkManager = networkManager
+        self.persistentStorage = persistentStorage
     }
     
     func edit() {
