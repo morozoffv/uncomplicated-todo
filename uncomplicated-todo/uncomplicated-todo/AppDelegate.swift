@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  uncomplicated-todo
 //
-//  Created by Vlad on 23/04/2019.
+//  Created by Vladislav Morozov on 23/04/2019.
 //  Copyright © 2019 misshapes. All rights reserved.
 //
 
@@ -14,9 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let container = Container()
+        //TODO: launch coordinator here
+        let rootController = container.makeViewController()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = UINavigationController(rootViewController: rootController)
+        window?.makeKeyAndVisible()
         return true
     }
 

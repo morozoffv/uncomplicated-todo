@@ -39,5 +39,4 @@ class TodoCell: UITableViewCell {
     func configure(todo: Todo) {
         label.text = todo.name
     }
-    
 }

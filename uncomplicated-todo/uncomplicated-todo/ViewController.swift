@@ -10,7 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let networkManager = NetworkManager(network: Network())
+    typealias DIFactory = TodoStorageFactory
+    private let factory: DIFactory
+    
+    private lazy var todoStorage: TodoStoraging = factory.makeTodoStorage()
+    
+    init(factory: DIFactory) {
+        self.factory = factory
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private var todos: [Todo] = [Todo(id: UUID(),
                                       name: "Wash my hands",
@@ -27,6 +39,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
@@ -39,7 +52,7 @@ class ViewController: UIViewController {
         tableView.register(TodoCell.self, forCellReuseIdentifier: TodoCell.self.description())
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTodo))
     }
-    
+
     @objc func addTodo() {
         todos.append(Todo(
             id: UUID(),
@@ -53,6 +66,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate {
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -65,6 +79,6 @@ extension ViewController: UITableViewDataSource {
         cell.configure(todo: todos[indexPath.count])
         return cell
     }
-    
-    
 }
+
+

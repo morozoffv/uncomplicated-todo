@@ -9,6 +9,13 @@
 import Foundation
 
 class TodoStorage: TodoStoraging {
+    
+    private let networkManager: NetworkManaging
+    
+    init(networkManager: NetworkManaging) {
+        self.networkManager = networkManager
+    }
+    
     func edit() {
         
     }
