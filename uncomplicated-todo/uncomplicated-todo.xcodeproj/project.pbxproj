@@ -25,6 +25,7 @@
 		F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5987509226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld */; };
 		F598750D226F96B3007E93E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F598750C226F96B3007E93E4 /* Assets.xcassets */; };
 		F5987510226F96B3007E93E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F598750E226F96B3007E93E4 /* LaunchScreen.storyboard */; };
+		F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9B8227C4AC200D70618 /* TodoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		F598750C226F96B3007E93E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F598750F226F96B3007E93E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5987511226F96B3007E93E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E0B9B8227C4AC200D70618 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		F5049646227234BF007743CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F5E0B9B8227C4AC200D70618 /* TodoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				F5068F1A22722AF600BEC973 /* Networking.swift in Sources */,
 				F504964F2272C3A2007743CA /* Response.swift in Sources */,
 				F507521B2274CA1700347361 /* TodoStoraging.swift in Sources */,
+				F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
