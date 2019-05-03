@@ -23,13 +23,11 @@ class TodoCell: UITableViewCell {
     }
     
     private func customInit() {
-        translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         
         NSLayoutConstraint.activate([label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-                                     label.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-                                     label.heightAnchor.constraint(equalToConstant: 20)])
+                                     label.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
         
 //        label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
 //        label.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
