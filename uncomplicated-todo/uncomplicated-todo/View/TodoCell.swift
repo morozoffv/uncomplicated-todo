@@ -28,10 +28,6 @@ class TodoCell: UITableViewCell {
         
         NSLayoutConstraint.activate([label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
                                      label.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
-        
-//        label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-//        label.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
-//        label.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
     func configure(todo: Todo) {

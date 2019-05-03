@@ -27,6 +27,7 @@
 		F5987510226F96B3007E93E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F598750E226F96B3007E93E4 /* LaunchScreen.storyboard */; };
 		F5AFA6222274F0FB0063FD7D /* DIFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AFA6212274F0FB0063FD7D /* DIFactories.swift */; };
 		F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9B8227C4AC200D70618 /* TodoCell.swift */; };
+		F5E0B9BB227C772E00D70618 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +51,9 @@
 		F598750C226F96B3007E93E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F598750F226F96B3007E93E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5987511226F96B3007E93E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5E0B9B8227C4AC200D70618 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		F5AFA6212274F0FB0063FD7D /* DIFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIFactories.swift; sourceTree = "<group>"; };
+		F5E0B9B8227C4AC200D70618 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				F5E0B9B8227C4AC200D70618 /* TodoCell.swift */,
+				F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,8 +248,6 @@
 				F50752172274C9F800347361 /* TodoStorage.swift in Sources */,
 				F5085B1D2273A91200144515 /* Parser.swift in Sources */,
 				F50752142274A85700347361 /* Container.swift in Sources */,
-				F507521D2274CA2100347361 /* HistoryStoraging.swift in Sources */,
-				F5085B18227395BC00144515 /* HistoryItem.swift in Sources */,
 				F5AFA6222274F0FB0063FD7D /* DIFactories.swift in Sources */,
 				F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */,
 				F5987505226F96B1007E93E4 /* ViewController.swift in Sources */,
@@ -255,6 +256,7 @@
 				F504964F2272C3A2007743CA /* Response.swift in Sources */,
 				F507521B2274CA1700347361 /* TodoStoraging.swift in Sources */,
 				F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */,
+				F5E0B9BB227C772E00D70618 /* UIViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
