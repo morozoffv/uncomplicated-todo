@@ -11,6 +11,6 @@ import Foundation
 protocol TodoStoraging {
     func add()
     func remove()
-    func getAll()
+    func getAll() -> [Todo]
     func edit()
 }

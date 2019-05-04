@@ -31,32 +31,25 @@ class CoreDataStack {
         )
     }
     
-    private lazy var storeContainer: NSPersistentContainer = {
+    private(set) lazy var storeContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: modelName)
         container.loadPersistentStores { storeDescription, error in
             print(storeDescription)
             if let error = error as NSError? {
+                //TODO: add an error
                 print("Unresolved error \(error), \(error.userInfo)")
             }
         }
         return container
     }()
     
+    //TODO: is it neccessary?
     private(set) lazy var managedContext: NSManagedObjectContext = {
        return storeContainer.viewContext
     }()
     
-    func saveContext() {
-        guard managedContext.hasChanges else { return }
-        
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Unresolved error \(error), \(error.userInfo)")
-        }
-    }
-    
+    //TODO: is it neccessary?
     @objc private func needToSave() {
-        saveContext()
+        try? storeContainer.viewContext.save()
     }
 }

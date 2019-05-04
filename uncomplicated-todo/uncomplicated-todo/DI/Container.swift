@@ -14,8 +14,9 @@ class Container {
     
     private lazy var network: Networking = Network()
     private lazy var networkManager: NetworkManaging = NetworkManager(network: network)
-    private lazy var persistentStorage: CoreDataStack = CoreDataStack(modelName: Container.modelName)
-    private lazy var todoStorage: TodoStoraging = TodoStorage(networkManager: networkManager, persistentStorage: persistentStorage)
+    private lazy var coreDataStack = CoreDataStack(modelName: Container.modelName)
+    private lazy var todoPersistentStorage: TodoPersistentStoraging = TodoPersistentStorage(coreDataStack: coreDataStack)
+    private lazy var todoStorage: TodoStoraging = TodoStorage(networkManager: networkManager, persistentStorage: todoPersistentStorage)
 }
 
 protocol TodoStorageFactory {

@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import CoreData
 
 class TodoStorage: TodoStoraging {
     
     private let networkManager: NetworkManaging
-    private let persistentStorage: CoreDataStack
+    private let persistentStorage: TodoPersistentStoraging
     
     //TODO: replace CoreDataStack with protocol
-    init(networkManager: NetworkManaging, persistentStorage: CoreDataStack) {
+    init(networkManager: NetworkManaging, persistentStorage: TodoPersistentStoraging) {
         self.networkManager = networkManager
         self.persistentStorage = persistentStorage
     }
@@ -31,8 +32,8 @@ class TodoStorage: TodoStoraging {
         
     }
     
-    func getAll() {
-        
+    func getAll() -> [Todo] {
+        return []
     }
     
 

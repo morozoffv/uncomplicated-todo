@@ -24,12 +24,7 @@ class ViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var todos: [Todo] = [Todo(id: UUID(),
-                                      name: "Wash my hands",
-                                      priority: .highest,
-                                      dueDate: Date().addingTimeInterval(222222222),
-                                      creationDate: Date(),
-                                      completedDate: Date())]
+    private var todos: [Todo] = []
     
     private lazy var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false

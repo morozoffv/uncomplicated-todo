@@ -29,6 +29,8 @@
 		F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9B8227C4AC200D70618 /* TodoCell.swift */; };
 		F5E0B9BB227C772E00D70618 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */; };
 		F5E0B9BE227CA14C00D70618 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9BD227CA14C00D70618 /* CoreDataStack.swift */; };
+		F5F121D9227D7ECB006BE4E4 /* TodoPersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F121D8227D7ECB006BE4E4 /* TodoPersistentStorage.swift */; };
+		F5F121DB227D7EF6006BE4E4 /* TodoPersistentStoraging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F121DA227D7EF6006BE4E4 /* TodoPersistentStoraging.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		F5E0B9B8227C4AC200D70618 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		F5E0B9BD227CA14C00D70618 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		F5F121D8227D7ECB006BE4E4 /* TodoPersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoPersistentStorage.swift; sourceTree = "<group>"; };
+		F5F121DA227D7EF6006BE4E4 /* TodoPersistentStoraging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoPersistentStoraging.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				F5E0B9BD227CA14C00D70618 /* CoreDataStack.swift */,
+				F5F121D8227D7ECB006BE4E4 /* TodoPersistentStorage.swift */,
+				F5F121DA227D7EF6006BE4E4 /* TodoPersistentStoraging.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -254,6 +260,7 @@
 				F50496512272C6AA007743CA /* NetworkConfiguration.swift in Sources */,
 				F504964D2272C328007743CA /* Request.swift in Sources */,
 				F50066E22275EB64000569A5 /* Todo.swift in Sources */,
+				F5F121DB227D7EF6006BE4E4 /* TodoPersistentStoraging.swift in Sources */,
 				F504964A2272C1AC007743CA /* NetworkManaging.swift in Sources */,
 				F5068F1C22722B0100BEC973 /* Network.swift in Sources */,
 				F50752172274C9F800347361 /* TodoStorage.swift in Sources */,
@@ -262,6 +269,7 @@
 				F5AFA6222274F0FB0063FD7D /* DIFactories.swift in Sources */,
 				F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */,
 				F5987505226F96B1007E93E4 /* ViewController.swift in Sources */,
+				F5F121D9227D7ECB006BE4E4 /* TodoPersistentStorage.swift in Sources */,
 				F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */,
 				F5068F1A22722AF600BEC973 /* Networking.swift in Sources */,
 				F5E0B9BE227CA14C00D70618 /* CoreDataStack.swift in Sources */,
