@@ -38,7 +38,7 @@ class TodoPersistentStorage: TodoPersistentStoraging {
     func remove(for id: UUID) {
         coreDataStack.storeContainer.performBackgroundTask { context in
             let fetchRequest: NSFetchRequest<TodoPersistent> = TodoPersistent.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "id==\(id)")
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id.uuidString)
             
             //TODO: put an error
             guard
@@ -47,6 +47,13 @@ class TodoPersistentStorage: TodoPersistentStoraging {
             else { return }
             
             context.delete(object)
+            
+            do {
+                try context.save()
+            } catch {
+                //TODO: put an error
+                fatalError("Failure to save context: \(error)")
+            }
         }
     }
     
@@ -66,7 +73,7 @@ class TodoPersistentStorage: TodoPersistentStoraging {
     func update(for id: UUID, name: String, priority: Priority, dueDate: Date?, creationDate: Date, completedDate: Date?) {
         coreDataStack.storeContainer.performBackgroundTask { context in
             let fetchRequest: NSFetchRequest<TodoPersistent> = TodoPersistent.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "id==\(id)")
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id.uuidString)
             
             //TODO: put an error
             guard
@@ -79,6 +86,13 @@ class TodoPersistentStorage: TodoPersistentStoraging {
             object.dueDate = dueDate
             object.creationDate = creationDate
             object.completedDate = completedDate
+            
+            do {
+                try context.save()
+            } catch {
+                //TODO: put an error
+                fatalError("Failure to save context: \(error)")
+            }
         }
     }    
 }

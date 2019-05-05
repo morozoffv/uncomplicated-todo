@@ -24,7 +24,11 @@ class ViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var todos: [Todo] = []
+    private var todos: [Todo] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     private lazy var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +39,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        todoStorage.getAll { [unowned self] todos in
+            self.todos = todos
+        }
+        
         view.backgroundColor = .white
         view.addSubview(tableView)
 
@@ -50,16 +59,17 @@ class ViewController: UIViewController {
     }
 
     @objc func addTodo() {
-        todos.append(Todo(
+        let todo = Todo(
             id: UUID(),
             name: "Another Todo #\(todos.count)",
             priority: .lowest,
             dueDate: Date(),
             creationDate: Date(),
-            completedDate: Date())
+            completedDate: Date()
         )
         
-        tableView.reloadData()
+        todos.append(todo)
+        todoStorage.add(todo: todo)
     }
 }
 
@@ -74,7 +84,9 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let todo = todos[indexPath.row]
             todos.remove(at: indexPath.row)
+            todoStorage.remove(for: todo.id)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
