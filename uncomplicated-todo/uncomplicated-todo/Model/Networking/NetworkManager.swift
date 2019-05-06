@@ -16,6 +16,25 @@ class NetworkManager: NetworkManaging {
         self.network = network
     }
     
+    func requestTodoNameExamples(completion: @escaping (Result<[String], NetworkManagerError>) -> Void) {
+        let request = Request(method: .get, query: nil, headers: [:], networkAction: .todoNameExamples)
+        network.execute(request: request) { result in
+            switch result {
+            case .success(let historyData):
+                guard let history = try? Parser<[String]>.decode(historyData) else {
+                    completion(.failure(.parsingError))
+                    return
+                }
+                completion(.success(history))
+                
+            case .failure(let error):
+                completion(.failure(.networkError(error)))
+                return
+            }
+        }
+    }
+    
+    //TODO: Returns todo stubs, implement with real data
     func requestTodos(completion: @escaping (Result<[Todo], NetworkManagerError>) -> Void) {
         let request = Request(method: .get, query: nil, headers: [:], networkAction: .todos)
         network.execute(request: request) { result in

@@ -17,6 +17,7 @@ class Container {
     private lazy var coreDataStack = CoreDataStack(modelName: Container.modelName)
     private lazy var todoPersistentStorage: TodoPersistentStoraging = TodoPersistentStorage(coreDataStack: coreDataStack)
     private lazy var todoStorage: TodoStoraging = TodoStorage(networkManager: networkManager, persistentStorage: todoPersistentStorage)
+    private lazy var todoNameExamplesStorage: TodoNameExamplesStorage = TodoNameExamplesStorage(networkManager: networkManager)
 }
 
 protocol TodoStorageFactory {
@@ -26,5 +27,15 @@ protocol TodoStorageFactory {
 extension Container: TodoStorageFactory {
     func makeTodoStorage() -> TodoStoraging {
         return todoStorage
+    }
+}
+
+protocol TodoNameExamplesStorageFactory {
+    func makeTodoNameExamplesStorage() -> TodoNameExamplesStorage
+}
+
+extension Container: TodoNameExamplesStorageFactory {
+    func makeTodoNameExamplesStorage() -> TodoNameExamplesStorage {
+        return todoNameExamplesStorage
     }
 }

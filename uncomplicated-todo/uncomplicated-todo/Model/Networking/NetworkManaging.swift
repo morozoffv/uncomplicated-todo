@@ -12,6 +12,7 @@ protocol NetworkManaging {
     func requestTodos(completion: @escaping (Result<[Todo], NetworkManagerError>) -> Void)
     func addTodo(completion: @escaping (Result<Void, NetworkManagerError>) -> Void)
     func completeTodo(completion: @escaping (Result<Void, NetworkManagerError>) -> Void)
+    func requestTodoNameExamples(completion: @escaping (Result<[String], NetworkManagerError>) -> Void)
 }
 
 enum NetworkManagerError: Error {

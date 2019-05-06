@@ -22,4 +22,5 @@ enum NetworkAction: String {
     case todos = "todos"
     case addTask = "add-task"
     case addToHistory = "add-to-history"
+    case todoNameExamples = "todo-names"
 }
