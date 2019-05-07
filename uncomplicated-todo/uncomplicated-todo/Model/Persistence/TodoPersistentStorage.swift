@@ -11,9 +11,10 @@ import CoreData
 
 enum TodoPersistentStorageError: Error {
     case transformationError
+    case saveContextError
+    case fetchingError
 }
 
-//TODO: add errors
 class TodoPersistentStorage: TodoPersistentStoraging {
     
     private let coreDataStack: CoreDataStack
@@ -29,8 +30,7 @@ class TodoPersistentStorage: TodoPersistentStoraging {
             do {
                 try context.save()
             } catch {
-                //TODO: put an error
-                fatalError("Failure to save context: \(error)")
+                print("\(TodoPersistentStorageError.saveContextError.localizedDescription): \(error)")
             }
         }
     }
@@ -40,19 +40,20 @@ class TodoPersistentStorage: TodoPersistentStoraging {
             let fetchRequest: NSFetchRequest<TodoPersistent> = TodoPersistent.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "id == %@", id.uuidString)
             
-            //TODO: put an error
             guard
                 let matches = try? context.fetch(fetchRequest),
                 let object = matches.first
-            else { return }
+            else {
+                print("\(TodoPersistentStorageError.fetchingError.localizedDescription)")
+                return
+            }
             
             context.delete(object)
             
             do {
                 try context.save()
             } catch {
-                //TODO: put an error
-                fatalError("Failure to save context: \(error)")
+                print("\(TodoPersistentStorageError.saveContextError.localizedDescription): \(error)")
             }
         }
     }
@@ -62,6 +63,7 @@ class TodoPersistentStorage: TodoPersistentStoraging {
             guard let persistentTodos = try? context.fetch(TodoPersistent.fetchRequest()),
                 let todos = persistentTodos as? [TodoPersistent]
             else {
+                print("\(TodoPersistentStorageError.fetchingError.localizedDescription)")
                 completion([])
                 return
             }
@@ -75,11 +77,13 @@ class TodoPersistentStorage: TodoPersistentStoraging {
             let fetchRequest: NSFetchRequest<TodoPersistent> = TodoPersistent.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "id == %@", id.uuidString)
             
-            //TODO: put an error
             guard
                 let matches = try? context.fetch(fetchRequest),
                 let object = matches.first
-                else { return }
+            else {
+                print("\(TodoPersistentStorageError.fetchingError.localizedDescription)")
+                return
+            }
             
             object.name = name
             object.priority = Int16(priority.rawValue)
@@ -90,8 +94,7 @@ class TodoPersistentStorage: TodoPersistentStoraging {
             do {
                 try context.save()
             } catch {
-                //TODO: put an error
-                fatalError("Failure to save context: \(error)")
+                print("\(TodoPersistentStorageError.saveContextError.localizedDescription): \(error)")
             }
         }
     }    
@@ -105,7 +108,7 @@ extension TodoPersistent {
             let name = name,
             let priority = Priority(rawValue: Int(priority)),
             let creationDate = creationDate
-        else { throw TodoPersistentStorageError.transformationError  }
+        else { throw TodoPersistentStorageError.transformationError }
         
         
         return Todo(
@@ -124,6 +127,7 @@ extension Array where Element: TodoPersistent {
         do {
             return try self.map { try $0.toTodo() }
         } catch {
+            print("\(TodoPersistentStorageError.transformationError.localizedDescription)")
             return []
         }
     }
