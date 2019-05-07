@@ -86,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				F5E0B9B8227C4AC200D70618 /* TodoCell.swift */,
-				F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +154,7 @@
 		F5987501226F96B0007E93E4 /* uncomplicated-todo */ = {
 			isa = PBXGroup;
 			children = (
+				F5F1CF8D22814B84005F7686 /* UIUtils */,
 				F5AFA6202274EC3B0063FD7D /* DI */,
 				F5049646227234BF007743CA /* View */,
 				F5049645227234AA007743CA /* ViewModel */,
@@ -186,6 +186,14 @@
 				F5F121DA227D7EF6006BE4E4 /* TodoPersistentStoraging.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		F5F1CF8D22814B84005F7686 /* UIUtils */ = {
+			isa = PBXGroup;
+			children = (
+				F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */,
+			);
+			path = UIUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
