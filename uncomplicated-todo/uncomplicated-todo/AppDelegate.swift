@@ -15,11 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let container = Container()
-        //TODO: launch coordinator here
-        let vm = container.makeTodoListViewModel()
-        let rootController = TodoListViewController(viewModel: vm)
+        let coordinator = Coordinator(container: container)
+        let rootController = RootViewController(coordinator: coordinator)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: rootController)
+        window?.rootViewController = rootController
         window?.makeKeyAndVisible()
         return true
     }

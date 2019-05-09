@@ -6,12 +6,24 @@
 //  Copyright © 2019 misshapes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Coordinator {
     
-    init() {
-        
+    private let container: Container
+    
+    init(container: Container) {
+        self.container = container
+    }
+    
+    func start(parent: UIViewController) {
+        let vm = container.makeTodoListViewModel()
+        let vc = TodoListViewController(viewModel: vm)
+        let navigationController = UINavigationController(rootViewController: vc)
+        parent.addChild(navigationController)
+        navigationController.view.frame = parent.view.bounds
+        parent.view.addSubview(navigationController.view)
+        navigationController.didMove(toParent: parent)
     }
     
     

@@ -41,5 +41,3 @@ class BondBox<T> {
     weak var bond: Bond<T>?
     init(_ b: Bond<T>) { bond = b }
 }
-
-

@@ -10,6 +10,7 @@
 		F50066E22275EB64000569A5 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50066E12275EB64000569A5 /* Todo.swift */; };
 		F502215F22845D0E00B2689D /* SettingsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502215E22845D0E00B2689D /* SettingsStorage.swift */; };
 		F502216122845D1B00B2689D /* SettingsStoraging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502216022845D1B00B2689D /* SettingsStoraging.swift */; };
+		F50221642284839700B2689D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50221632284839700B2689D /* RootViewController.swift */; };
 		F504729A2280B7E700ED3DDD /* TodoNameExamplesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50472992280B7E700ED3DDD /* TodoNameExamplesStorage.swift */; };
 		F50496482272C1A2007743CA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50496472272C1A2007743CA /* NetworkManager.swift */; };
 		F504964A2272C1AC007743CA /* NetworkManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50496492272C1AC007743CA /* NetworkManaging.swift */; };
@@ -44,6 +45,7 @@
 		F50066E12275EB64000569A5 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		F502215E22845D0E00B2689D /* SettingsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStorage.swift; sourceTree = "<group>"; };
 		F502216022845D1B00B2689D /* SettingsStoraging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoraging.swift; sourceTree = "<group>"; };
+		F50221632284839700B2689D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		F50472992280B7E700ED3DDD /* TodoNameExamplesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNameExamplesStorage.swift; sourceTree = "<group>"; };
 		F50496472272C1A2007743CA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F50496492272C1AC007743CA /* NetworkManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManaging.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				F5E0B9B8227C4AC200D70618 /* TodoCell.swift */,
 				F5EECE2F228298FD001BEAC1 /* TodoListViewController.swift */,
+				F50221632284839700B2689D /* RootViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				F5F121D9227D7ECB006BE4E4 /* TodoPersistentStorage.swift in Sources */,
 				F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */,
 				F5068F1A22722AF600BEC973 /* Networking.swift in Sources */,
+				F50221642284839700B2689D /* RootViewController.swift in Sources */,
 				F5EECE332282A16A001BEAC1 /* Coordinator.swift in Sources */,
 				F5E0B9BE227CA14C00D70618 /* CoreDataStack.swift in Sources */,
 				F504964F2272C3A2007743CA /* Response.swift in Sources */,
