@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let container = Container()
         //TODO: launch coordinator here
-        let rootController = container.makeViewController()
+        let vm = container.makeTodoListViewModel()
+        let rootController = TodoListViewController(viewModel: vm)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: rootController)
         window?.makeKeyAndVisible()
