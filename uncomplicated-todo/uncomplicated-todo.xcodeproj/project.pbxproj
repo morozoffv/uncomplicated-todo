@@ -37,7 +37,7 @@
 		F5EECE332282A16A001BEAC1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EECE322282A16A001BEAC1 /* Coordinator.swift */; };
 		F5F121D9227D7ECB006BE4E4 /* TodoPersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F121D8227D7ECB006BE4E4 /* TodoPersistentStorage.swift */; };
 		F5F121DB227D7EF6006BE4E4 /* TodoPersistentStoraging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F121DA227D7EF6006BE4E4 /* TodoPersistentStoraging.swift */; };
-		F5F1CF8F22815089005F7686 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F1CF8E22815089005F7686 /* Dynamic.swift */; };
+		F5F1CF8F22815089005F7686 /* Bindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F1CF8E22815089005F7686 /* Bindings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +73,7 @@
 		F5EECE322282A16A001BEAC1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F5F121D8227D7ECB006BE4E4 /* TodoPersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoPersistentStorage.swift; sourceTree = "<group>"; };
 		F5F121DA227D7EF6006BE4E4 /* TodoPersistentStoraging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoPersistentStoraging.swift; sourceTree = "<group>"; };
-		F5F1CF8E22815089005F7686 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		F5F1CF8E22815089005F7686 /* Bindings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +94,14 @@
 				F502216022845D1B00B2689D /* SettingsStoraging.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		F502216222846D1400B2689D /* Name Examples */ = {
+			isa = PBXGroup;
+			children = (
+				F50472992280B7E700ED3DDD /* TodoNameExamplesStorage.swift */,
+			);
+			path = "Name Examples";
 			sourceTree = "<group>";
 		};
 		F5049645227234AA007743CA /* ViewModel */ = {
@@ -132,12 +140,12 @@
 		F5068F1822722ADB00BEC973 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F502216222846D1400B2689D /* Name Examples */,
 				F502215D22845CFC00B2689D /* Settings */,
 				F5E0B9BC227CA13700D70618 /* Persistence */,
 				F50752152274C98100347361 /* Storage */,
 				F5085B1B2273965400144515 /* Entity */,
 				F504964B2272C30F007743CA /* Networking */,
-				F50472992280B7E700ED3DDD /* TodoNameExamplesStorage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */,
-				F5F1CF8E22815089005F7686 /* Dynamic.swift */,
+				F5F1CF8E22815089005F7686 /* Bindings.swift */,
 			);
 			path = UIUtils;
 			sourceTree = "<group>";
@@ -326,7 +334,7 @@
 				F507521B2274CA1700347361 /* TodoStoraging.swift in Sources */,
 				F502216122845D1B00B2689D /* SettingsStoraging.swift in Sources */,
 				F504729A2280B7E700ED3DDD /* TodoNameExamplesStorage.swift in Sources */,
-				F5F1CF8F22815089005F7686 /* Dynamic.swift in Sources */,
+				F5F1CF8F22815089005F7686 /* Bindings.swift in Sources */,
 				F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */,
 				F5E0B9BB227C772E00D70618 /* UIViewExtensions.swift in Sources */,
 			);

@@ -9,7 +9,6 @@
 import Foundation
 
 class TodoListViewModel: TodoListViewModeling {
-    typealias Factory = TodoStorageFactory
     private(set) var todos: Dynamic<[Todo]> = Dynamic<[Todo]>([])
     
     private let todoStorage: TodoStoraging

@@ -10,13 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    typealias DIFactory = TodoStorageFactory
-    private let factory: DIFactory
+    private let todoStorage: TodoStoraging
     
-    private lazy var todoStorage: TodoStoraging = factory.makeTodoStorage()
-    
-    init(factory: DIFactory) {
-        self.factory = factory
+    init(todoStorage: TodoStoraging) {
+        self.todoStorage = todoStorage
         super.init(nibName: nil, bundle: nil)
     }
     
