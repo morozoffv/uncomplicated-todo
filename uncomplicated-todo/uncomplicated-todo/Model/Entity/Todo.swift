@@ -9,9 +9,9 @@
 import Foundation
 
 enum Priority: Int, Codable {
-    case lowest = 0
+    case low = 0
     case medium = 1
-    case highest = 2
+    case high = 2
 }
 
 struct Todo: Codable {

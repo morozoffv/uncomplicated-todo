@@ -11,6 +11,8 @@ import UIKit
 class TodoCell: UITableViewCell {
     
     private let label = UILabel()
+    private let completeButton = UIButton()
+    private let priorityImage = UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

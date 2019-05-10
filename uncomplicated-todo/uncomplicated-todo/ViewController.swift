@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         let todo = Todo(
             id: UUID(),
             name: "Another Todo #\(todos.count)",
-            priority: .lowest,
+            priority: .low,
             dueDate: Date(),
             creationDate: Date(),
             completedDate: Date()

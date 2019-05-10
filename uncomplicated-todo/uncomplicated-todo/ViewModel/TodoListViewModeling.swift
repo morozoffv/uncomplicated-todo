@@ -9,5 +9,7 @@
 import Foundation
 
 protocol TodoListViewModeling {
-    
+    var todos: Dynamic<[Todo]> { get }
+    func addTodo()
+    func removeTodo(at index: Int)
 }
