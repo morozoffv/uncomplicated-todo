@@ -15,6 +15,7 @@ struct AnchoredConstraints {
 
 extension UIView {
 
+    //TODO: add centerX, centerY
     @discardableResult
     func anchor(top: NSLayoutYAxisAnchor? = nil,
                 leading: NSLayoutXAxisAnchor? = nil,

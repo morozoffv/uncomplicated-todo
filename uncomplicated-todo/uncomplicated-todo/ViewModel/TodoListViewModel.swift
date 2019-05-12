@@ -9,6 +9,9 @@
 import Foundation
 
 class TodoListViewModel: TodoListViewModeling {
+    
+    private var isCompleted = false
+    
     //TODO: remove dynamic?
     private(set) var todos: Dynamic<[Todo]> = Dynamic<[Todo]>([])
     
@@ -23,17 +26,21 @@ class TodoListViewModel: TodoListViewModeling {
     }
     
     func addTodo() {
+        let randomPriority = Priority(rawValue: Int.random(in: 0...2))!
+        
         let todo = Todo(
             id: UUID(),
             name: "Another Todo #\(todos.value.count)",
-            priority: .low,
+            priority: randomPriority,
             dueDate: Date(),
             creationDate: Date(),
-            completedDate: Date()
+            completedDate: isCompleted ? Date() : nil
         )
         
         todos.value.append(todo)
         todoStorage.add(todo: todo)
+        
+        isCompleted = !isCompleted
     }
     
     func removeTodo(at index: Int) {

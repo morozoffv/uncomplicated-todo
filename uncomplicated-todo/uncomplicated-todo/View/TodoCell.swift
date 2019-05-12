@@ -10,7 +10,7 @@ import UIKit
 
 class TodoCell: UITableViewCell {
     
-    private let label = UILabel()
+    private let nameLabel = UILabel()
     private let completeButton = UIButton()
     private let priorityImage = UIImageView()
     
@@ -25,14 +25,46 @@ class TodoCell: UITableViewCell {
     }
     
     private func customInit() {
-        label.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(label)
+        addSubview(nameLabel)
+        addSubview(priorityImage)
+        addSubview(completeButton)
         
-        NSLayoutConstraint.activate([label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-                                     label.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
+        priorityImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([priorityImage.leadingAnchor.constraint(equalTo: self.leadingAnchor,
+                                                                            constant: 10),
+                                     priorityImage.trailingAnchor.constraint(equalTo: nameLabel.leadingAnchor,
+                                                                             constant: -15),
+                                     priorityImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                                     priorityImage.widthAnchor.constraint(equalToConstant: 13),
+                                     priorityImage.heightAnchor.constraint(equalToConstant: 13)])
+
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([nameLabel.trailingAnchor.constraint(equalTo: completeButton.leadingAnchor,
+                                                                         constant: 10),
+                                     nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)])
+
+        completeButton.anchor(top: self.topAnchor,
+                              bottom: self.bottomAnchor,
+                              trailing: self.trailingAnchor,
+                              padding: UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 10),
+                              size: CGSize(width: 25, height: 25))
+        
+        nameLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
     }
     
     func configure(todo: Todo) {
-        label.text = todo.name
+        let isCompleted = todo.completedDate == nil
+        nameLabel.text = todo.name
+        
+        switch todo.priority {
+        case .low:
+            priorityImage.image = #imageLiteral(resourceName: "ic_low_priority")
+        case .medium:
+            priorityImage.image = #imageLiteral(resourceName: "ic_medium_priority")
+        case .high:
+            priorityImage.image = #imageLiteral(resourceName: "ic_high_priority")
+        }
+        
+        completeButton.setImage(isCompleted ? #imageLiteral(resourceName: "ic_unchecked") : #imageLiteral(resourceName: "ic_checked"), for: .normal)
     }
 }

@@ -30,21 +30,19 @@ class TodoListViewController: UITableViewController {
         view.backgroundColor = .white
         
         tableView.register(TodoCell.self, forCellReuseIdentifier: TodoCell.self.description())
+        tableView.alwaysBounceVertical = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTodo))
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
         title = "Tasks"
 
         //todosBond.bind(dynamic: viewModel.todos)
+        
     }
     
     @objc func addTodo() {
         viewModel.addTodo()
         self.tableView.reloadData()
-    }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
