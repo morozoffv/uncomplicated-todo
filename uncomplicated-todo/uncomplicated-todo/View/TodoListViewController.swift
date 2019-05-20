@@ -37,7 +37,6 @@ class TodoListViewController: UITableViewController {
         title = "Tasks"
 
         //todosBond.bind(dynamic: viewModel.todos)
-        
     }
     
     @objc func addTodo() {

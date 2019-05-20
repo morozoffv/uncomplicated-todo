@@ -107,6 +107,7 @@ extension TodoPersistent {
             let id = id,
             let name = name,
             let priority = Priority(rawValue: Int(priority)),
+            let dueDate = dueDate,
             let creationDate = creationDate
         else { throw TodoPersistentStorageError.transformationError }
         

@@ -18,7 +18,7 @@ struct Todo: Codable {
     let id: UUID
     let name: String
     let priority: Priority
-    let dueDate: Date?
+    let dueDate: Date
     let creationDate: Date
     let completedDate: Date?
 }
