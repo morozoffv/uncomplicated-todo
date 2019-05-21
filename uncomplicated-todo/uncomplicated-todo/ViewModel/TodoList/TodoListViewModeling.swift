@@ -11,5 +11,5 @@ import Foundation
 protocol TodoListViewModeling {
     var sections: Dynamic<[WeekSection]> { get }
     func addTodo()
-    func removeTodo(at index: Int)
+    func removeTodo(id: UUID)
 }

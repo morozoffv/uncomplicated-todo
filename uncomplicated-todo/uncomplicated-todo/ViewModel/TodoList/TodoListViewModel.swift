@@ -15,6 +15,12 @@ class TodoListViewModel: TodoListViewModeling {
     //TODO: remove dynamic?
     private(set) var sections: Dynamic<[WeekSection]> = Dynamic<[WeekSection]>([])
     
+    private var todos: [Todo] = [] {
+        didSet {
+            self.sections.value = self.createWeekSections(todos: todos)
+        }
+    }
+    
     private let todoStorage: TodoStoraging
     private let weekRangeBuilder: WeekRangeBuilder
     
@@ -23,32 +29,31 @@ class TodoListViewModel: TodoListViewModeling {
         self.weekRangeBuilder = weekRangeBuilder
         
         todoStorage.getAll { todos in
-            self.sections.value = self.createWeekSections(todos: todos)
+            self.todos = todos
         }
     }
     
     func addTodo() {
-//        let randomPriority = Priority(rawValue: Int.random(in: 0...2))!
-//
-//        let todo = Todo(
-//            id: UUID(),
-//            name: "Another Todo #\(todos.value.count)",
-//            priority: randomPriority,
-//            dueDate: Date(),
-//            creationDate: Date(),
-//            completedDate: isCompleted ? Date() : nil
-//        )
-//
-//        todos.value.append(todo)
-//        todoStorage.add(todo: todo)
-//
-//        isCompleted = !isCompleted
+        let randomPriority = Priority(rawValue: Int.random(in: 0...2))!
+
+        let todo = Todo(
+            id: UUID(),
+            name: "Another Todo #\(todos.count)",
+            priority: randomPriority,
+            dueDate: truncateTime(from: Date()),
+            creationDate: Date(),
+            completedDate: isCompleted ? Date() : nil
+        )
+
+        todos.append(todo)
+        todoStorage.add(todo: todo)
+
+        isCompleted = !isCompleted
     }
     
-    func removeTodo(at index: Int) {
-//        let todo = todos.value[index]
-//        todos.value.remove(at: index)
-//        todoStorage.remove(for: todo.id)
+    func removeTodo(id: UUID) {
+        todos.removeAll { $0.id == id }
+        todoStorage.remove(for: id)
     }
     
     private func createWeekSections(todos: [Todo]) -> [WeekSection] {
@@ -104,5 +109,14 @@ class TodoListViewModel: TodoListViewModeling {
     
     private func todoItem(from todo: Todo) -> TodoListItem {
         return .todo(id: todo.id, name: todo.name, priority: todo.priority, isCompleted: todo.isCompleted)
+    }
+    
+    public func truncateTime(from date: Date) -> Date {
+        guard let date = Calendar.current.date(
+            from: Calendar.current.dateComponents([.year, .month, .day], from: fromDate))
+        else {
+            fatalError("Failed to truncate time from Date object")
+        }
+        return date
     }
 }

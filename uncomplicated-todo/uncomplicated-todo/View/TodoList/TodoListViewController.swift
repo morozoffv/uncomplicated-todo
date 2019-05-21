@@ -12,9 +12,9 @@ class TodoListViewController: UITableViewController {
     
     private let viewModel: TodoListViewModeling
     
-//    private lazy var todosBond = Bond<[Todo]>() { [unowned self] todos in
-//        self.tableView.reloadData()
-//    }
+    private lazy var weekSectionsBond = Bond<[WeekSection]>() { [unowned self] _ in
+        self.tableView.reloadData()
+    }
     
     init(viewModel: TodoListViewModeling) {
         self.viewModel = viewModel
@@ -30,7 +30,7 @@ class TodoListViewController: UITableViewController {
         view.backgroundColor = .white
         setupTableView()
         setupNavigationBar()
-        //todosBond.bind(dynamic: viewModel.todos)
+        weekSectionsBond.bind(dynamic: viewModel.sections)
     }
     
     private func setupTableView() {
@@ -118,9 +118,10 @@ class TodoListViewController: UITableViewController {
         commit editingStyle: UITableViewCell.EditingStyle,
         forRowAt indexPath: IndexPath) {
         
+        guard let id = viewModel.sections.value[indexPath.section].items[indexPath.row].id else { return }
         if editingStyle == .delete {
-            viewModel.removeTodo(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            viewModel.removeTodo(id: id)
+            //tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
     
@@ -174,5 +175,14 @@ private extension TodoListItem {
     
     var height: CGFloat {
         return 40
+    }
+    
+    var id: UUID? {
+        switch self {
+        case .todo(let id, _, _, _):
+            return id
+        case .weekday:
+            return nil
+        }
     }
 }

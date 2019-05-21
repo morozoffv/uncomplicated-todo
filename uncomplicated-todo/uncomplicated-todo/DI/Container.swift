@@ -23,9 +23,9 @@ class Container {
     //Here we make instances that might be created several times during app lifespan
     func makeTodoListViewModel() -> TodoListViewModeling {
         //TODO: replace storage with real one
-        return TodoListViewModel(todoStorage: TodoStorageMock(todos: testedTodos), weekRangeBuilder: WeekRangeBuilder(calendar: Calendar.current))
+        //return TodoListViewModel(todoStorage: TodoStorageMock(todos: testedTodos), weekRangeBuilder: WeekRangeBuilder(calendar: Calendar.current))
 
-        //return TodoListViewModel(todoStorage: todoStorage, weekRangeBuilder: WeekRangeBuilder(calendar: Calendar.current))
+        return TodoListViewModel(todoStorage: todoStorage, weekRangeBuilder: WeekRangeBuilder(calendar: Calendar.current))
     }
     
     //TODO: remove these later
