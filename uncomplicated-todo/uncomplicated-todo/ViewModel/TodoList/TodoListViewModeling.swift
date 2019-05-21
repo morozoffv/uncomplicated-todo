@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TodoListViewModeling {
-    var todos: Dynamic<[Todo]> { get }
+    var sections: Dynamic<[WeekSection]> { get }
     func addTodo()
     func removeTodo(at index: Int)
 }

@@ -22,7 +22,7 @@ class Container {
 
     //Here we make instances that might be created several times during app lifespan
     func makeTodoListViewModel() -> TodoListViewModeling {
-        return TodoListViewModel(todoStorage: todoStorage)
+        return TodoListViewModel(todoStorage: todoStorage, weekRangeBuilder: WeekRangeBuilder(calendar: Calendar.current))
     }
 }
 
