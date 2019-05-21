@@ -41,13 +41,22 @@ class TodoListViewController: UITableViewController {
     }
     
     private func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTodo))
+        navigationItem.rightBarButtonItem =
+            UIBarButtonItem(
+                barButtonSystemItem: .add,
+                target: self,
+                action: #selector(addTodo))
+
         navigationItem.rightBarButtonItem?.tintColor = Colors.tintColor
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.primaryColor]
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.primaryColor]
         title = "Tasks"
+        
+        navigationController?.navigationBar.largeTitleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: Colors.primaryColor]
+        
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: Colors.primaryColor]
     }
     
     @objc func addTodo() {
@@ -66,17 +75,36 @@ class TodoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = viewModel.sections.value[indexPath.section].items[indexPath.row]
-        
+        let section = viewModel.sections.value[indexPath.section]
+        let item = section.items[indexPath.row]
+
         switch item {
         case .todo(_, let name, let priority, let isCompleted):
-            let cell = tableView.dequeueReusableCell(withIdentifier: TodoCell.self.description(), for: indexPath) as! TodoCell
-            cell.configure(name: name, priority: priority, isCompleted: isCompleted)
+            
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: TodoCell.self.description(),
+                for: indexPath) as! TodoCell
+            
+            cell.configure(
+                name: name,
+                priority: priority,
+                isCompleted: isCompleted,
+                isOverdue: section.isOverdue)
+            
             return cell
             
         case .weekday(let weekday, let dayMonth, let todoNumber):
-            let cell = tableView.dequeueReusableCell(withIdentifier: WeekdayCell.self.description(), for: indexPath) as! WeekdayCell
-            cell.configure(weekday: weekday, dayMonth: dayMonth, todoNumber: todoNumber)
+            
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: WeekdayCell.self.description(),
+                for: indexPath) as! WeekdayCell
+            
+            cell.configure(
+                weekday: weekday,
+                dayMonth: dayMonth,
+                todoNumber: todoNumber,
+                isOverdue: section.isOverdue)
+            
             return cell
         }
     }
@@ -85,7 +113,11 @@ class TodoListViewController: UITableViewController {
         return viewModel.sections.value[indexPath.section].items[indexPath.row].editable
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
             viewModel.removeTodo(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -104,6 +136,7 @@ class TodoListViewController: UITableViewController {
         dateSectionView.headerLabel.text = "Week"
         dateSectionView.dateLabel.text = sectionItem.weekStartEnd
         dateSectionView.todoCounterLabel.text = String(sectionItem.todoNumber)
+        dateSectionView.isOverdue = sectionItem.isOverdue
         return dateSectionView
     }
     
@@ -143,4 +176,3 @@ private extension TodoListItem {
         return 40
     }
 }
-

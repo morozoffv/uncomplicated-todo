@@ -32,9 +32,14 @@ class WeekdayCell: UITableViewCell {
         ])
     }
     
-    func configure(weekday: String, dayMonth: String, todoNumber: Int) {
+    func configure(weekday: String,
+                   dayMonth: String,
+                   todoNumber: Int,
+                   isOverdue: Bool) {
+        
         view.headerLabel.text = weekday
         view.dateLabel.text = dayMonth
         view.todoCounterLabel.text = String(todoNumber)
+        view.isOverdue = isOverdue
     }
 }

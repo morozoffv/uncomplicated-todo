@@ -60,7 +60,12 @@ class TodoListViewModel: TodoListViewModeling {
             guard let todos = weekSortedTodos[key] else { return }
             let items = todoListItems(from: todos)
             let todoItemsNumber = items.filter { if case .todo(_) = $0 { return true } else { return false } }.count
-            sections.append(WeekSection(items: items, weekStartEnd: DateUtils.dayMonths(from: key), todoNumber: todoItemsNumber))
+            
+            sections.append(WeekSection(
+                items: items,
+                weekStartEnd: DateUtils.dayMonths(from: key),
+                todoNumber: todoItemsNumber,
+                isOverdue: !key.contains(Date())))
         }
         
         return sections

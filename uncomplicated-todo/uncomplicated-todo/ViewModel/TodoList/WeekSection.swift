@@ -12,4 +12,5 @@ struct WeekSection: Equatable {
     let items: [TodoListItem]
     let weekStartEnd: String
     let todoNumber: Int
+    let isOverdue: Bool
 }

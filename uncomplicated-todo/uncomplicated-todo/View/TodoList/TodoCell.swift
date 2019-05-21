@@ -53,7 +53,7 @@ class TodoCell: UITableViewCell {
         ])
     }
     
-    func configure(name: String, priority: Priority, isCompleted: Bool) {
+    func configure(name: String, priority: Priority, isCompleted: Bool, isOverdue: Bool) {
         nameLabel.text = name
         
         switch priority {
@@ -64,6 +64,10 @@ class TodoCell: UITableViewCell {
         case .high:
             priorityImage.image = #imageLiteral(resourceName: "ic_high_priority")
         }
+        
         completeButton.setImage(isCompleted ? #imageLiteral(resourceName: "ic_checked") : #imageLiteral(resourceName: "ic_unchecked"), for: .normal)
+        
+        nameLabel.textColor = isOverdue ?
+            Colors.primaryColor.withAlphaComponent(0.5) : Colors.primaryColor
     }
 }

@@ -29,6 +29,12 @@ class DateSectionView: UIView {
         return label
     }()
     
+    var isOverdue: Bool = false {
+        didSet {
+            setOverdueState(isOverdue: isOverdue)
+        }
+    }
+    
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         customInit()
@@ -65,5 +71,20 @@ class DateSectionView: UIView {
             todoCounterLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             todoCounterLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
+    }
+    
+    private func setOverdueState(isOverdue: Bool) {
+        headerLabel.textColor =
+            Colors.primaryColor.withAlphaComponent(overdueStateAlpha(isOverdue))
+        
+        dateLabel.textColor =
+            Colors.secondaryColor.withAlphaComponent(overdueStateAlpha(isOverdue))
+        
+        todoCounterLabel.textColor =
+            Colors.secondaryColor.withAlphaComponent(overdueStateAlpha(isOverdue))
+    }
+    
+    private func overdueStateAlpha(_ isOverdue: Bool) -> CGFloat {
+        return isOverdue ? 0.5 : 1
     }
 }
