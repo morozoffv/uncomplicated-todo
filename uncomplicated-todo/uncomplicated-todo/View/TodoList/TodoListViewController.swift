@@ -48,7 +48,7 @@ class TodoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let dateSectionView = DateSectionView(headerFontSize: 24)
+        let dateSectionView = DateSectionView(headerFontSize: 26)
         let sectionItem = viewModel.sections.value[section]
         dateSectionView.headerLabel.text = "Week"
         dateSectionView.dateLabel.text = sectionItem.weekStartEnd

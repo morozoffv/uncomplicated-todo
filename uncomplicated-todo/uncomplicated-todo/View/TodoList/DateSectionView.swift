@@ -63,7 +63,7 @@ class DateSectionView: UIView {
         ])
         
         todoCounterLabel.activateConstraints([
-            todoCounterLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),	
+            todoCounterLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             todoCounterLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }

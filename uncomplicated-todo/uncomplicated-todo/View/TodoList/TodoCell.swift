@@ -37,12 +37,12 @@ class TodoCell: UITableViewCell {
             priorityImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             priorityImage.widthAnchor.constraint(equalToConstant: 13),
             priorityImage.heightAnchor.constraint(equalToConstant: 13)
-            ])
+        ])
         
         nameLabel.activateConstraints([
             nameLabel.trailingAnchor.constraint(equalTo: completeButton.leadingAnchor, constant: 10),
             nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-            ])
+        ])
         
         completeButton.activateConstraints([
             completeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
@@ -50,7 +50,7 @@ class TodoCell: UITableViewCell {
             completeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             completeButton.heightAnchor.constraint(equalToConstant: 25),
             completeButton.widthAnchor.constraint(equalToConstant: 25)
-            ])
+        ])
     }
     
     func configure(name: String, priority: Priority, isCompleted: Bool) {
