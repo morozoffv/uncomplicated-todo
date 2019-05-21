@@ -9,6 +9,7 @@
 import UIKit
 
 class TodoListViewController: UITableViewController {
+    
     private let viewModel: TodoListViewModeling
     
 //    private lazy var todosBond = Bond<[Todo]>() { [unowned self] todos in
@@ -30,6 +31,8 @@ class TodoListViewController: UITableViewController {
         view.backgroundColor = .white
         
         tableView.register(TodoCell.self, forCellReuseIdentifier: TodoCell.self.description())
+        tableView.register(WeekdayCell.self, forCellReuseIdentifier: WeekdayCell.self.description())
+        
         tableView.alwaysBounceVertical = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTodo))
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -44,24 +47,70 @@ class TodoListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            viewModel.removeTodo(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .automatic)
-//        }
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return viewModel.todos.value.count
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: TodoCell.self.description(), for: indexPath) as! TodoCell
-//        cell.configure(todo: viewModel.todos.value[indexPath.row])
-//        return cell
-//    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = viewModel.sections.value[section].weekStartEnd
+        label.backgroundColor = UIColor.lightGray
+        return label
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return viewModel.sections.value[indexPath.section].items[indexPath.row].editable 
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return viewModel.sections.value[indexPath.section].items[indexPath.row].selectable
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.removeTodo(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sections.value.count
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.sections.value[section].items.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = viewModel.sections.value[indexPath.section].items[indexPath.row]
+        
+        switch item {
+        case .todo(_, let name, let priority, let isCompleted):
+            let cell = tableView.dequeueReusableCell(withIdentifier: TodoCell.self.description(), for: indexPath) as! TodoCell
+            cell.configure(name: name, priority: priority, isCompleted: isCompleted)
+            return cell
+
+        case .weekday(let weekday, let dayMonth, let todoNumber):
+            let cell = tableView.dequeueReusableCell(withIdentifier: WeekdayCell.self.description(), for: indexPath) as! WeekdayCell
+            cell.configure(weekday: weekday, dayMonth: dayMonth, todoNumber: todoNumber)
+            return cell
+        }
+    }
 }
+
+private extension TodoListItem {
+    var editable: Bool {
+        switch self {
+        case .todo:
+            return true
+        case .weekday:
+            return false
+        }
+    }
+    
+    var selectable: Bool {
+        switch self {
+        case .todo:
+            return true
+        case .weekday:
+            return false
+        }
+    }
+}
+

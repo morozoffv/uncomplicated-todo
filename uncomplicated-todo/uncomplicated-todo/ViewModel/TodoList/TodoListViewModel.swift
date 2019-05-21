@@ -60,7 +60,7 @@ class TodoListViewModel: TodoListViewModeling {
             guard let todos = weekSortedTodos[key] else { return }
             let items = todoListItems(from: todos)
             let todoItemsNumber = items.filter { if case .todo(_) = $0 { return true } else { return false } }.count
-            sections.append(WeekSection(items: items, weekRange: key, todoNumber: todoItemsNumber))
+            sections.append(WeekSection(items: items, weekStartEnd: DateUtils.dayMonths(from: key), todoNumber: todoItemsNumber))
         }
         
         return sections
@@ -90,11 +90,15 @@ class TodoListViewModel: TodoListViewModeling {
         var items = [TodoListItem]()
         weekdaySortedTodos.keys.sorted { $0 < $1 }.forEach { key in
             guard let todos = weekdaySortedTodos[key] else { return }
-            items.append(.weekday(date: key, todoNumber: todos.count))
-            items.append(contentsOf: todos.map { TodoListItem.todo($0) })
+            items.append(.weekday(weekday: key.weekday, dayMonth: key.dayMonth, todoNumber: todos.count))
+            items.append(contentsOf: todos.map { self.todoItem(from: $0) })
         }
         
         return items
+    }
+    
+    private func todoItem(from todo: Todo) -> TodoListItem {
+        return .todo(id: todo.id, name: todo.name, priority: todo.priority, isCompleted: todo.isCompleted)
     }
 
 }

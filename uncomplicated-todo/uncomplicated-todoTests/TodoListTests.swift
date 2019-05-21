@@ -68,34 +68,51 @@ class TodoListTests: XCTestCase {
         subject25
     ]
     
+//    lazy var earliestSectionTodoItems: [TodoListItem] = [
+//        .weekday(date: self.date(from: "2019-04-29T00:00:00+0000"), todoNumber: 1),     //Monday
+//        .todo(subject24),
+//        .weekday(date: self.date(from: "2019-05-03T00:00:00+0000"), todoNumber: 3),     //Friday
+//        .todo(subject21),
+//        .todo(subject22),
+//        .todo(subject23),
+//        .weekday(date: self.date(from: "2019-05-04T00:00:00+0000"), todoNumber: 1),     //Saturday
+//        .todo(subject25)
+//    ]
+    
+    lazy var weekdayDate1 = self.date(from: "2019-04-29T00:00:00+0000")
+    lazy var weekdayDate2 = self.date(from: "2019-05-03T00:00:00+0000")
+    lazy var weekdayDate3 = self.date(from: "2019-05-04T00:00:00+0000")
     lazy var earliestSectionTodoItems: [TodoListItem] = [
-        .weekday(date: self.date(from: "2019-04-29T00:00:00+0000"), todoNumber: 1),     //Monday
-        .todo(subject24),
-        .weekday(date: self.date(from: "2019-05-03T00:00:00+0000"), todoNumber: 3),     //Friday
-        .todo(subject21),
-        .todo(subject22),
-        .todo(subject23),
-        .weekday(date: self.date(from: "2019-05-04T00:00:00+0000"), todoNumber: 1),     //Saturday
-        .todo(subject25)
+        .weekday(weekday: weekdayDate1.weekday, dayMonth: weekdayDate1.dayMonth, todoNumber: 1),       //Monday
+        .todo(id: subject24.id, name: subject24.name, priority: subject24.priority, isCompleted: subject24.isCompleted),
+        .weekday(weekday: weekdayDate2.weekday, dayMonth: weekdayDate2.dayMonth, todoNumber: 3),       //Friday
+        .todo(id: subject21.id, name: subject21.name, priority: subject21.priority, isCompleted: subject21.isCompleted),
+        .todo(id: subject22.id, name: subject22.name, priority: subject22.priority, isCompleted: subject22.isCompleted),
+        .todo(id: subject23.id, name: subject23.name, priority: subject23.priority, isCompleted: subject23.isCompleted),
+        .weekday(weekday: weekdayDate3.weekday, dayMonth: weekdayDate3.dayMonth, todoNumber: 1),       //Saturday
+        .todo(id: subject25.id, name: subject25.name, priority: subject25.priority, isCompleted: subject25.isCompleted),
     ]
     
+    lazy var weekdayDate4 = self.date(from: "2019-05-13T00:00:00+0000")
+    lazy var weekdayDate5 = self.date(from: "2019-05-16T00:00:00+0000")
+    lazy var weekdayDate6 = self.date(from: "2019-05-19T00:00:00+0000")
     lazy var latestSectionTodoItems: [TodoListItem] = [
-        .weekday(date: self.date(from: "2019-05-13T00:00:00+0000"), todoNumber: 1),     //Monday
-        .todo(subject11),
-        .weekday(date: self.date(from: "2019-05-16T00:00:00+0000"), todoNumber: 2),     //Thursday
-        .todo(subject13),
-        .todo(subject14),
-        .weekday(date: self.date(from: "2019-05-19T00:00:00+0000"), todoNumber: 1),     //Sunday
-        .todo(subject12)
+        .weekday(weekday: weekdayDate4.weekday, dayMonth: weekdayDate4.dayMonth, todoNumber: 1),      //Monday
+        .todo(id: subject11.id, name: subject11.name, priority: subject11.priority, isCompleted: subject11.isCompleted),
+        .weekday(weekday: weekdayDate5.weekday, dayMonth: weekdayDate5.dayMonth, todoNumber: 2),      //Thursday
+        .todo(id: subject13.id, name: subject13.name, priority: subject13.priority, isCompleted: subject13.isCompleted),
+        .todo(id: subject14.id, name: subject14.name, priority: subject14.priority, isCompleted: subject14.isCompleted),
+        .weekday(weekday: weekdayDate6.weekday, dayMonth: weekdayDate6.dayMonth, todoNumber: 1),       //Sunday
+        .todo(id: subject12.id, name: subject12.name, priority: subject12.priority, isCompleted: subject12.isCompleted)
     ]
     
     lazy var expectedSections: [WeekSection] = [
         WeekSection(items: latestSectionTodoItems,
-            weekRange: self.date(from: "2019-05-13T00:00:00+0000")...self.date(from: "2019-05-19T00:00:00+0000"),
-            todoNumber: 4),
+                    weekStartEnd: DateUtils.dayMonths(from: self.date(from: "2019-05-13T00:00:00+0000")...self.date(from: "2019-05-19T00:00:00+0000")),
+                    todoNumber: 4),
         WeekSection(items: earliestSectionTodoItems,
-            weekRange: self.date(from: "2019-04-29T00:00:00+0000")...self.date(from: "2019-05-05T00:00:00+0000"),
-            todoNumber: 5)
+                    weekStartEnd: DateUtils.dayMonths(from: self.date(from: "2019-04-29T00:00:00+0000")...self.date(from: "2019-05-05T00:00:00+0000")),
+                    todoNumber: 5)
     ]
     
     private lazy var viewModel: TodoListViewModeling = {

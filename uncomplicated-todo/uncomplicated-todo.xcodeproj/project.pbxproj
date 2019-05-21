@@ -25,7 +25,6 @@
 		F5085B1A227395FB00144515 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B19227395FB00144515 /* User.swift */; };
 		F5085B1D2273A91200144515 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B1C2273A91200144515 /* Parser.swift */; };
 		F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5987502226F96B1007E93E4 /* AppDelegate.swift */; };
-		F5987505226F96B1007E93E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5987504226F96B1007E93E4 /* ViewController.swift */; };
 		F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5987509226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld */; };
 		F598750D226F96B3007E93E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F598750C226F96B3007E93E4 /* Assets.xcassets */; };
 		F5987510226F96B3007E93E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F598750E226F96B3007E93E4 /* LaunchScreen.storyboard */; };
@@ -45,6 +44,10 @@
 		F5ECC07F2293E0FD00FF9DFB /* TodoListViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EECE2D228298B7001BEAC1 /* TodoListViewModeling.swift */; };
 		F5ECC0802293E2EC00FF9DFB /* TodoStoraging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F507521A2274CA1700347361 /* TodoStoraging.swift */; };
 		F5ECC0812293E5C300FF9DFB /* Bindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F1CF8E22815089005F7686 /* Bindings.swift */; };
+		F5ECC0832293ECEE00FF9DFB /* WeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */; };
+		F5ECC0842293ECEE00FF9DFB /* WeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */; };
+		F5ECC0862293F93700FF9DFB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0852293F93700FF9DFB /* DateUtils.swift */; };
+		F5ECC0872293F93700FF9DFB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0852293F93700FF9DFB /* DateUtils.swift */; };
 		F5EECE2C22829895001BEAC1 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EECE2B22829895001BEAC1 /* TodoListViewModel.swift */; };
 		F5EECE2E228298B7001BEAC1 /* TodoListViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EECE2D228298B7001BEAC1 /* TodoListViewModeling.swift */; };
 		F5EECE30228298FD001BEAC1 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EECE2F228298FD001BEAC1 /* TodoListViewController.swift */; };
@@ -86,7 +89,6 @@
 		F5085B1C2273A91200144515 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		F59874FF226F96B0007E93E4 /* uncomplicated-todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uncomplicated-todo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5987502226F96B1007E93E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F5987504226F96B1007E93E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F598750A226F96B1007E93E4 /* uncomplicated_todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uncomplicated_todo.xcdatamodel; sourceTree = "<group>"; };
 		F598750C226F96B3007E93E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F598750F226F96B3007E93E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,8 @@
 		F5E1D849229189BA006E6392 /* TodoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTests.swift; sourceTree = "<group>"; };
 		F5EAD80D22880E18009F9184 /* DateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionView.swift; sourceTree = "<group>"; };
 		F5ECC07B2293E09500FF9DFB /* TodoStorageMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoStorageMock.swift; sourceTree = "<group>"; };
+		F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCell.swift; sourceTree = "<group>"; };
+		F5ECC0852293F93700FF9DFB /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		F5EECE2B22829895001BEAC1 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		F5EECE2D228298B7001BEAC1 /* TodoListViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModeling.swift; sourceTree = "<group>"; };
 		F5EECE2F228298FD001BEAC1 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 				F5EECE2F228298FD001BEAC1 /* TodoListViewController.swift */,
 				F50221632284839700B2689D /* RootViewController.swift */,
 				F5EAD80D22880E18009F9184 /* DateSectionView.swift */,
+				F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				F5FB9B6F2292EA3800354F8C /* WeekRangeBuilder.swift */,
+				F5ECC0852293F93700FF9DFB /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -248,7 +254,6 @@
 				F5049645227234AA007743CA /* ViewModel */,
 				F5068F1822722ADB00BEC973 /* Model */,
 				F5987502226F96B1007E93E4 /* AppDelegate.swift */,
-				F5987504226F96B1007E93E4 /* ViewController.swift */,
 				F598750C226F96B3007E93E4 /* Assets.xcassets */,
 				F598750E226F96B3007E93E4 /* LaunchScreen.storyboard */,
 				F5987511226F96B3007E93E4 /* Info.plist */,
@@ -431,10 +436,11 @@
 				F5EECE2C22829895001BEAC1 /* TodoListViewModel.swift in Sources */,
 				F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */,
 				F5ECC07C2293E09600FF9DFB /* TodoStorageMock.swift in Sources */,
-				F5987505226F96B1007E93E4 /* ViewController.swift in Sources */,
 				F5F121D9227D7ECB006BE4E4 /* TodoPersistentStorage.swift in Sources */,
 				F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */,
 				F5068F1A22722AF600BEC973 /* Networking.swift in Sources */,
+				F5ECC0832293ECEE00FF9DFB /* WeekdayCell.swift in Sources */,
+				F5ECC0862293F93700FF9DFB /* DateUtils.swift in Sources */,
 				F50221642284839700B2689D /* RootViewController.swift in Sources */,
 				F5EECE332282A16A001BEAC1 /* Coordinator.swift in Sources */,
 				F5E1D84822918976006E6392 /* WeekSection.swift in Sources */,
@@ -456,10 +462,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E1D84A229189BB006E6392 /* TodoListTests.swift in Sources */,
+				F5ECC0872293F93700FF9DFB /* DateUtils.swift in Sources */,
 				F5ECC07F2293E0FD00FF9DFB /* TodoListViewModeling.swift in Sources */,
 				F5E1D84D22918F99006E6392 /* Todo.swift in Sources */,
 				F5ECC07E2293E0FD00FF9DFB /* TodoListViewModel.swift in Sources */,
 				F5ECC0802293E2EC00FF9DFB /* TodoStoraging.swift in Sources */,
+				F5ECC0842293ECEE00FF9DFB /* WeekdayCell.swift in Sources */,
 				F5ECC0812293E5C300FF9DFB /* Bindings.swift in Sources */,
 				F5FB9B712292EA7200354F8C /* WeekRangeBuilder.swift in Sources */,
 				F5E1D84F22919D9C006E6392 /* TodoListItem.swift in Sources */,

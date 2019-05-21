@@ -9,6 +9,6 @@
 import Foundation
 
 enum TodoListItem: Equatable {
-    case todo(Todo)
-    case weekday(date: Date, todoNumber: Int)
+    case todo(id: UUID, name: String, priority: Priority, isCompleted: Bool)
+    case weekday(weekday: String, dayMonth: String, todoNumber: Int)
 }

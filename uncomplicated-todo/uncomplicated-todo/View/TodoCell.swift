@@ -52,11 +52,10 @@ class TodoCell: UITableViewCell {
         nameLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
     }
     
-    func configure(todo: Todo) {
-        let isCompleted = todo.completedDate == nil
-        nameLabel.text = todo.name
+    func configure(name: String, priority: Priority, isCompleted: Bool) {
+        nameLabel.text = name
         
-        switch todo.priority {
+        switch priority {
         case .low:
             priorityImage.image = #imageLiteral(resourceName: "ic_low_priority")
         case .medium:
@@ -64,7 +63,6 @@ class TodoCell: UITableViewCell {
         case .high:
             priorityImage.image = #imageLiteral(resourceName: "ic_high_priority")
         }
-        
-        completeButton.setImage(isCompleted ? #imageLiteral(resourceName: "ic_unchecked") : #imageLiteral(resourceName: "ic_checked"), for: .normal)
+        completeButton.setImage(isCompleted ? #imageLiteral(resourceName: "ic_checked") : #imageLiteral(resourceName: "ic_unchecked"), for: .normal)
     }
 }

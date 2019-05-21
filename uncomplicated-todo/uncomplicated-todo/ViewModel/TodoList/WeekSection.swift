@@ -10,6 +10,6 @@ import Foundation
 
 struct WeekSection: Equatable {
     let items: [TodoListItem]
-    let weekRange: ClosedRange<Date>
+    let weekStartEnd: String
     let todoNumber: Int
 }
