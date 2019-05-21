@@ -42,8 +42,11 @@ class TodoListViewController: UITableViewController {
     
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTodo))
+        navigationItem.rightBarButtonItem?.tintColor = Colors.tintColor
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.primaryColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.primaryColor]
         title = "Tasks"
     }
     
