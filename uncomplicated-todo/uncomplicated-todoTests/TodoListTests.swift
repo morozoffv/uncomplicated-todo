@@ -11,7 +11,6 @@ import XCTest
 
 class TodoListTests: XCTestCase {
     
-    
     lazy var subject11 = Todo(id: UUID(), name: "11, order: 4", priority: .high,
                               dueDate: self.date(from: "2019-05-13T00:00:00+0000"),
                               creationDate: self.date(from: "2019-05-11T00:00:00+0000"),
@@ -100,50 +99,64 @@ class TodoListTests: XCTestCase {
     ]
     
     func testTodoListSectionsSort() {
-        
+        let sections = createWeekSections(todos: testedTodos)
+        XCTAssertEqual(sections, expectedSections)
     }
     
     private func createWeekSections(todos: [Todo]) -> [WeekSection] {
+        
+        let weekSortedTodos = sortedTodosByWeeks(from: todos)
+        
         var sections = [WeekSection]()
-        var sortedTodos: [ClosedRange<Date>: Todo] = [:]
-        todos.forEach { todo in
-            sortedTodos[da]
+        weekSortedTodos.keys.sorted { $0.lowerBound > $1.lowerBound }.forEach { key in
+            guard let todos = weekSortedTodos[key] else { return }
+            let items = todoListItems(from: todos)
+            let todoItemsNumber = items.filter { if case .todo(_) = $0 { return true } else { return false } }.count
+            sections.append(WeekSection(items: items, weekRange: key, todoNumber: todoItemsNumber))
         }
-        
-        
-        
         
         return sections
     }
     
+    private func sortedTodosByWeeks(from todos: [Todo]) -> [ClosedRange<Date>: [Todo]] {
+        var sortedTodos = [ClosedRange<Date>: [Todo]]()
+        
+        //TODO: Tests assume that monday is the first day of the week.
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        calendar.firstWeekday = 2
+        
+        todos.forEach { todo in
+            guard let key = WeekRangeBuilder(calendar: calendar).weekRangeFrom(dateInBetween: todo.dueDate) else { return }
+            if sortedTodos[key] == nil { sortedTodos[key] = [] }
+            sortedTodos[key]?.append(todo)
+        }
+        return sortedTodos
+    }
     
+    private func todoListItems(from todos: [Todo]) -> [TodoListItem] {
+        let sortedTodos = todos.sorted { $0.dueDate < $1.dueDate }
+        var weekdaySortedTodos: [Date: [Todo]] = [:]
+        
+        sortedTodos.forEach { todo in
+            let key = todo.dueDate
+            if weekdaySortedTodos[key] == nil { weekdaySortedTodos[key] = [] }
+            weekdaySortedTodos[key]?.append(todo)
+        }
+        
+        var items = [TodoListItem]()
+        weekdaySortedTodos.keys.sorted { $0 < $1 }.forEach { key in
+            guard let todos = weekdaySortedTodos[key] else { return }
+            items.append(.weekday(date: key, todoNumber: todos.count))
+            items.append(contentsOf: todos.map { TodoListItem.todo($0) })
+        }
+        
+        return items
+    }
     
     private func date(from string: String) -> Date {
-        let dateFormatter = DateFormatter()
+        let dateFormatter = ISO8601DateFormatter()
         return dateFormatter.date(from: string)!
     }
-    
-    //Takes into account all possible first weekday scenarios
-    
-    private func dateOfFirstDayOfTheWeek(from date: Date) -> Date? {
-        let calendar = Calendar.current
-        let weekdayComponents = calendar.dateComponents([.weekday], from: date)
-        var componentsToSubtract = DateComponents()
-        
-        guard let weekday = weekdayComponents.weekday else { return nil }
-        let subtractor = weekdaySubtractor(weekday: weekday, firstDayOfTheWeek: calendar.firstWeekday)
-        componentsToSubtract.day = -(subtractor)
-        guard let weekStart = calendar.date(byAdding: componentsToSubtract, to: date) else { return nil }
-        
-        let components = calendar.dateComponents([.year, .month, .day], from: weekStart)
-        
-        return calendar.date(from: components)
-    }
-    
-    private func weekdaySubtractor(weekday: Int, firstDayOfTheWeek: Int) -> Int {
-        let subtractor = weekday - firstDayOfTheWeek
-        return subtractor < 0 ? 6 : subtractor
-    }
-    
     
 }

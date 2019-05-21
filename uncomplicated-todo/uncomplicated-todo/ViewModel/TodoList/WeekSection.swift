@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeekSection {
+struct WeekSection: Equatable {
     let items: [TodoListItem]
     let weekRange: ClosedRange<Date>
     let todoNumber: Int

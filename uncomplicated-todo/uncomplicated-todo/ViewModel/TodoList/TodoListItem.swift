@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum TodoListItem {
+enum TodoListItem: Equatable {
     case todo(Todo)
     case weekday(date: Date, todoNumber: Int)
 }

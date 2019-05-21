@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum Priority: Int, Codable {
+enum Priority: Int, Codable, Equatable {
     case low = 0
     case medium = 1
     case high = 2
 }
 
-struct Todo: Codable {
+struct Todo: Codable, Equatable {
     let id: UUID
     let name: String
     let priority: Priority

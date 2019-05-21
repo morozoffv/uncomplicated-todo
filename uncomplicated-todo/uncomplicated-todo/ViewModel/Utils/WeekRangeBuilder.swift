@@ -1,5 +1,5 @@
 //
-//  DateRangeBuilder.swift
+//  WeekRangeBuilder.swift
 //  uncomplicated-todo
 //
 //  Created by Vladislav Morozov on 20/05/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DateRangeBuilder {
+class WeekRangeBuilder {
     
     private struct Constants {
         static let weekLength: Int = 7
@@ -19,7 +19,15 @@ class DateRangeBuilder {
         case endDay
     }
     
-    static func weekRangeFrom(dateInBetween: Date) -> ClosedRange<Date>? {
+    private var calendar: Calendar
+    
+    init(calendar: Calendar = Calendar.current) {
+        //TODO: Should I change the timezone?
+        self.calendar = calendar
+        self.calendar.timeZone = TimeZone(identifier: "UTC")!
+    }
+    
+    func weekRangeFrom(dateInBetween: Date) -> ClosedRange<Date>? {
         guard let startDate = findWeekBound(of: dateInBetween, bound: .startDay),
             let endDate = findWeekBound(of: dateInBetween, bound: .endDay)
         else {
@@ -29,42 +37,8 @@ class DateRangeBuilder {
         return startDate...endDate
     }
     
-//    static private func dateOfFirstDayOfTheWeek(from date: Date) -> Date? {
-//        let calendar = Calendar.current
-//        let weekdayComponents = calendar.dateComponents([.weekday], from: date)
-//        var componentsToSubtract = DateComponents()
-//
-//        guard let weekday = weekdayComponents.weekday else { return nil }
-//        let subtractor = weekdaySubtractor(weekday: weekday, firstDayOfTheWeek: calendar.firstWeekday)
-//        componentsToSubtract.day = -(subtractor)
-//        guard let weekStart = calendar.date(byAdding: componentsToSubtract, to: date) else { return nil }
-//
-//        let components = calendar.dateComponents([.year, .month, .day], from: weekStart)
-//
-//        let startDate = calendar.date(from: components)
-//
-//        return startDate
-//    }
-//
-//    static private func dateOfLastDayOfTheWeek(from date: Date) -> Date? {
-//        let calendar = Calendar.current
-//        let weekdayComponents = calendar.dateComponents([.weekday], from: date)
-//        var componentsToAdd = DateComponents()
-//
-//        guard let weekday = weekdayComponents.weekday else { return nil }
-//        let addend = weekdayAddend(weekday: weekday, firstDayOfTheWeek: calendar.firstWeekday)
-//        componentsToAdd.day = addend
-//        guard let weekEnd = calendar.date(byAdding: componentsToAdd, to: date) else { return nil }
-//
-//        let components = calendar.dateComponents([.year, .month, .day], from: weekEnd)
-//
-//        let endDate = calendar.date(from: components)
-//
-//        return endDate
-//    }
-    
-    static private func findWeekBound(of date: Date, bound: WeekBounds) -> Date? {
-        let calendar = Calendar.current
+    private func findWeekBound(of date: Date, bound: WeekBounds) -> Date? {
+        
         let weekdayComponents = calendar.dateComponents([.weekday], from: date)
         guard let weekday = weekdayComponents.weekday else { return nil }
         
@@ -86,12 +60,12 @@ class DateRangeBuilder {
         return calendar.date(from: components)
     }
 
-    static private func weekdaySubtractor(weekday: Int, firstDayOfTheWeek: Int) -> Int {
+    private func weekdaySubtractor(weekday: Int, firstDayOfTheWeek: Int) -> Int {
         let subtractor = weekday - firstDayOfTheWeek
         return subtractor < 0 ? 6 : subtractor
     }
     
-    static private func weekdayAddend(weekday: Int, firstDayOfTheWeek: Int) -> Int {
+    private func weekdayAddend(weekday: Int, firstDayOfTheWeek: Int) -> Int {
         let addend = ((weekday + Constants.weekLength) - (firstDayOfTheWeek - 1)) % 7
         let result = addend == 0 ? 7 : addend
         return Constants.weekLength - result
