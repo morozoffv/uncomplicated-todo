@@ -48,14 +48,16 @@ class TodoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.text = viewModel.sections.value[section].weekStartEnd
-        label.backgroundColor = UIColor.lightGray
-        return label
+        let dateSectionView = DateSectionView(headerFontSize: 24)
+        let sectionItem = viewModel.sections.value[section]
+        dateSectionView.headerLabel.text = "Week"
+        dateSectionView.dateLabel.text = sectionItem.weekStartEnd
+        dateSectionView.todoCounterLabel.text = String(sectionItem.todoNumber)
+        return dateSectionView
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return viewModel.sections.value[indexPath.section].items[indexPath.row].editable 
+        return viewModel.sections.value[indexPath.section].items[indexPath.row].editable
     }
     
     override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {

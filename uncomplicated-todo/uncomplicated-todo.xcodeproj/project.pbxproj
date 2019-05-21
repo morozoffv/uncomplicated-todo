@@ -29,7 +29,7 @@
 		F598750D226F96B3007E93E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F598750C226F96B3007E93E4 /* Assets.xcassets */; };
 		F5987510226F96B3007E93E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F598750E226F96B3007E93E4 /* LaunchScreen.storyboard */; };
 		F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9B8227C4AC200D70618 /* TodoCell.swift */; };
-		F5E0B9BB227C772E00D70618 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */; };
+		F5E0B9BB227C772E00D70618 /* UIViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9BA227C772E00D70618 /* UIViewUtils.swift */; };
 		F5E0B9BE227CA14C00D70618 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0B9BD227CA14C00D70618 /* CoreDataStack.swift */; };
 		F5E1D8462291892B006E6392 /* TodoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8452291892B006E6392 /* TodoListItem.swift */; };
 		F5E1D84822918976006E6392 /* WeekSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D84722918976006E6392 /* WeekSection.swift */; };
@@ -48,6 +48,8 @@
 		F5ECC0842293ECEE00FF9DFB /* WeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */; };
 		F5ECC0862293F93700FF9DFB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0852293F93700FF9DFB /* DateUtils.swift */; };
 		F5ECC0872293F93700FF9DFB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0852293F93700FF9DFB /* DateUtils.swift */; };
+		F5ECC08B2294229C00FF9DFB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC08A2294229C00FF9DFB /* Colors.swift */; };
+		F5ECC08D229423B200FF9DFB /* UIColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC08C229423B200FF9DFB /* UIColorUtils.swift */; };
 		F5EECE2C22829895001BEAC1 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EECE2B22829895001BEAC1 /* TodoListViewModel.swift */; };
 		F5EECE2E228298B7001BEAC1 /* TodoListViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EECE2D228298B7001BEAC1 /* TodoListViewModeling.swift */; };
 		F5EECE30228298FD001BEAC1 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EECE2F228298FD001BEAC1 /* TodoListViewController.swift */; };
@@ -94,7 +96,7 @@
 		F598750F226F96B3007E93E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5987511226F96B3007E93E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E0B9B8227C4AC200D70618 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
-		F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		F5E0B9BA227C772E00D70618 /* UIViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtils.swift; sourceTree = "<group>"; };
 		F5E0B9BD227CA14C00D70618 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		F5E1D838229188E4006E6392 /* uncomplicated-todoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uncomplicated-todoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E1D83C229188E5006E6392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +107,8 @@
 		F5ECC07B2293E09500FF9DFB /* TodoStorageMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoStorageMock.swift; sourceTree = "<group>"; };
 		F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCell.swift; sourceTree = "<group>"; };
 		F5ECC0852293F93700FF9DFB /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		F5ECC08A2294229C00FF9DFB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		F5ECC08C229423B200FF9DFB /* UIColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorUtils.swift; sourceTree = "<group>"; };
 		F5EECE2B22829895001BEAC1 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		F5EECE2D228298B7001BEAC1 /* TodoListViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModeling.swift; sourceTree = "<group>"; };
 		F5EECE2F228298FD001BEAC1 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
@@ -162,11 +166,8 @@
 		F5049646227234BF007743CA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F5E0B9B8227C4AC200D70618 /* TodoCell.swift */,
-				F5EECE2F228298FD001BEAC1 /* TodoListViewController.swift */,
+				F5ECC0892294207600FF9DFB /* TodoList */,
 				F50221632284839700B2689D /* RootViewController.swift */,
-				F5EAD80D22880E18009F9184 /* DateSectionView.swift */,
-				F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +302,17 @@
 			path = TodoList;
 			sourceTree = "<group>";
 		};
+		F5ECC0892294207600FF9DFB /* TodoList */ = {
+			isa = PBXGroup;
+			children = (
+				F5E0B9B8227C4AC200D70618 /* TodoCell.swift */,
+				F5EECE2F228298FD001BEAC1 /* TodoListViewController.swift */,
+				F5EAD80D22880E18009F9184 /* DateSectionView.swift */,
+				F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */,
+			);
+			path = TodoList;
+			sourceTree = "<group>";
+		};
 		F5EECE312282995B001BEAC1 /* Coordination */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,8 +324,10 @@
 		F5F1CF8D22814B84005F7686 /* UIUtils */ = {
 			isa = PBXGroup;
 			children = (
-				F5E0B9BA227C772E00D70618 /* UIViewExtensions.swift */,
+				F5E0B9BA227C772E00D70618 /* UIViewUtils.swift */,
 				F5F1CF8E22815089005F7686 /* Bindings.swift */,
+				F5ECC08A2294229C00FF9DFB /* Colors.swift */,
+				F5ECC08C229423B200FF9DFB /* UIColorUtils.swift */,
 			);
 			path = UIUtils;
 			sourceTree = "<group>";
@@ -429,6 +443,7 @@
 				F502215F22845D0E00B2689D /* SettingsStorage.swift in Sources */,
 				F504964A2272C1AC007743CA /* NetworkManaging.swift in Sources */,
 				F5068F1C22722B0100BEC973 /* Network.swift in Sources */,
+				F5ECC08D229423B200FF9DFB /* UIColorUtils.swift in Sources */,
 				F50752172274C9F800347361 /* TodoStorage.swift in Sources */,
 				F5085B1D2273A91200144515 /* Parser.swift in Sources */,
 				F50752142274A85700347361 /* Container.swift in Sources */,
@@ -445,6 +460,7 @@
 				F5EECE332282A16A001BEAC1 /* Coordinator.swift in Sources */,
 				F5E1D84822918976006E6392 /* WeekSection.swift in Sources */,
 				F5E0B9BE227CA14C00D70618 /* CoreDataStack.swift in Sources */,
+				F5ECC08B2294229C00FF9DFB /* Colors.swift in Sources */,
 				F504964F2272C3A2007743CA /* Response.swift in Sources */,
 				F5EAD80E22880E18009F9184 /* DateSectionView.swift in Sources */,
 				F507521B2274CA1700347361 /* TodoStoraging.swift in Sources */,
@@ -452,7 +468,7 @@
 				F504729A2280B7E700ED3DDD /* TodoNameExamplesStorage.swift in Sources */,
 				F5F1CF8F22815089005F7686 /* Bindings.swift in Sources */,
 				F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */,
-				F5E0B9BB227C772E00D70618 /* UIViewExtensions.swift in Sources */,
+				F5E0B9BB227C772E00D70618 /* UIViewUtils.swift in Sources */,
 				F5FB9B702292EA3800354F8C /* WeekRangeBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
