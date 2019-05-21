@@ -28,7 +28,7 @@ class DateSectionView: UIView {
         label.textColor = Colors.secondaryColor
         return label
     }()
-            
+    
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         customInit()
@@ -53,8 +53,7 @@ class DateSectionView: UIView {
     private func setupConstraints() {
         headerLabel.activateConstraints([
             headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            headerLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            headerLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             headerLabel.trailingAnchor.constraint(equalTo: dateLabel.leadingAnchor, constant: -5)
         ])
         

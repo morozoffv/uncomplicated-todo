@@ -100,5 +100,4 @@ class TodoListViewModel: TodoListViewModeling {
     private func todoItem(from todo: Todo) -> TodoListItem {
         return .todo(id: todo.id, name: todo.name, priority: todo.priority, isCompleted: todo.isCompleted)
     }
-
 }

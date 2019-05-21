@@ -27,29 +27,29 @@ class TodoCell: UITableViewCell {
     private func customInit() {
         addSubviews(nameLabel, priorityImage, completeButton)
         setupConstraints()
-        nameLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        nameLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        nameLabel.textColor = Colors.primaryColor
     }
     
     private func setupConstraints() {
         priorityImage.activateConstraints([
-            priorityImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            priorityImage.trailingAnchor.constraint(equalTo: nameLabel.leadingAnchor, constant: -15),
-            priorityImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            priorityImage.widthAnchor.constraint(equalToConstant: 13),
-            priorityImage.heightAnchor.constraint(equalToConstant: 13)
+            priorityImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            priorityImage.trailingAnchor.constraint(equalTo: nameLabel.leadingAnchor, constant: -12),
+            priorityImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            priorityImage.widthAnchor.constraint(equalToConstant: 12),
+            priorityImage.heightAnchor.constraint(equalToConstant: 12)
         ])
         
         nameLabel.activateConstraints([
-            nameLabel.trailingAnchor.constraint(equalTo: completeButton.leadingAnchor, constant: 10),
-            nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            nameLabel.trailingAnchor.constraint(equalTo: completeButton.leadingAnchor, constant: 12),
+            nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         completeButton.activateConstraints([
-            completeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            completeButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            completeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            completeButton.heightAnchor.constraint(equalToConstant: 25),
-            completeButton.widthAnchor.constraint(equalToConstant: 25)
+            completeButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            completeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            completeButton.heightAnchor.constraint(equalToConstant: 24),
+            completeButton.widthAnchor.constraint(equalToConstant: 24)
         ])
     }
     
