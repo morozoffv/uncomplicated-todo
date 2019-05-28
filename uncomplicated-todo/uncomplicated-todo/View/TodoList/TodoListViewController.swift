@@ -79,7 +79,7 @@ class TodoListViewController: UITableViewController {
         let item = section.items[indexPath.row]
 
         switch item {
-        case .todo(_, let name, let priority, let isCompleted):
+        case .todo(let id, let name, let priority, let isCompleted):
             
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: TodoCell.self.description(),
@@ -89,7 +89,8 @@ class TodoListViewController: UITableViewController {
                 name: name,
                 priority: priority,
                 isCompleted: isCompleted,
-                isOverdue: section.isOverdue)
+                isOverdue: section.isOverdue,
+                completeAction: { [unowned self] in self.viewModel.completeTodo(id: id) })
             
             return cell
             

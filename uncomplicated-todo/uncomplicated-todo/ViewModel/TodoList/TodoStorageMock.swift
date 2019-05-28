@@ -28,6 +28,10 @@ class TodoStorageMock: TodoStoraging {
 
     }
     
+    func update(todo: Todo, with completedDate: Date?) {
+        
+    }
+    
     func getAll(completion: @escaping ([Todo]) -> Void) {
         completion(todos)
     }

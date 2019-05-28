@@ -12,7 +12,6 @@ class TodoListViewModel: TodoListViewModeling {
     
     private var isCompleted = false
     
-    //TODO: remove dynamic?
     private(set) var sections: Dynamic<[WeekSection]> = Dynamic<[WeekSection]>([])
     
     private var todos: [Todo] = [] {
@@ -54,6 +53,12 @@ class TodoListViewModel: TodoListViewModeling {
     func removeTodo(id: UUID) {
         todos.removeAll { $0.id == id }
         todoStorage.remove(for: id)
+    }
+    
+    func completeTodo(id: UUID) {
+        todos.removeAll { $0.id == id }
+        guard let todo = todos.first(where: { $0.id == id }) else { return }
+        todoStorage.update(todo: todo, with: Date())
     }
     
     private func createWeekSections(todos: [Todo]) -> [WeekSection] {
@@ -113,7 +118,7 @@ class TodoListViewModel: TodoListViewModeling {
     
     public func truncateTime(from date: Date) -> Date {
         guard let date = Calendar.current.date(
-            from: Calendar.current.dateComponents([.year, .month, .day], from: fromDate))
+            from: Calendar.current.dateComponents([.year, .month, .day], from: date))
         else {
             fatalError("Failed to truncate time from Date object")
         }

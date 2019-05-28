@@ -11,6 +11,7 @@ import Foundation
 protocol TodoStoraging {
     func add(todo: Todo)
     func remove(for id: UUID)
-    func update(for id: UUID, name: String, priority: Priority, dueDate: Date?, creationDate: Date, completedDate: Date?)
     func getAll(completion: @escaping ([Todo]) -> Void)
+    func update(for id: UUID, name: String, priority: Priority, dueDate: Date?, creationDate: Date, completedDate: Date?)
+    func update(todo: Todo, with completedDate: Date?)
 }

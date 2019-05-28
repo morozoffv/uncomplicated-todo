@@ -28,6 +28,10 @@ class TodoStorage: TodoStoraging {
         persistentStorage.remove(for: id)
     }
     
+    func getAll(completion: @escaping ([Todo]) -> Void) {
+        persistentStorage.getAll(completion: completion)
+    }
+    
     func update(for id: UUID, name: String, priority: Priority, dueDate: Date?, creationDate: Date, completedDate: Date?) {
         persistentStorage.update(
             for: id,
@@ -39,8 +43,13 @@ class TodoStorage: TodoStoraging {
         )
     }
     
-    func getAll(completion: @escaping ([Todo]) -> Void) {
-        persistentStorage.getAll(completion: completion)
+    func update(todo: Todo, with completedDate: Date?) {
+        persistentStorage.update(for: todo.id,
+                                 name: todo.name,
+                                 priority: todo.priority,
+                                 dueDate: todo.dueDate,
+                                 creationDate: todo.creationDate,
+                                 completedDate: completedDate)
     }
     
 }

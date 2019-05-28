@@ -20,10 +20,18 @@ class Coordinator {
         let vm = container.makeTodoListViewModel()
         let vc = TodoListViewController(viewModel: vm)
         let navigationController = UINavigationController(rootViewController: vc)
-        parent.addChild(navigationController)
-        navigationController.view.frame = parent.view.bounds
-        parent.view.addSubview(navigationController.view)
-        navigationController.didMove(toParent: parent)
+        navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+//        parent.addChild(navigationController)
+//        navigationController.view.frame = parent.view.bounds
+//        parent.view.addSubview(navigationController.view)
+//        navigationController.didMove(toParent: parent)
+        
+        let tabController = UITabBarController()
+        tabController.viewControllers = [navigationController]
+        parent.addChild(tabController)
+        tabController.view.frame = parent.view.bounds
+        parent.view.addSubview(tabController.view)
+        tabController.didMove(toParent: parent)
     }
     
     

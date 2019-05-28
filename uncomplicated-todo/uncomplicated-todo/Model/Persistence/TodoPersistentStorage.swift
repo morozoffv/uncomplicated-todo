@@ -97,7 +97,31 @@ class TodoPersistentStorage: TodoPersistentStoraging {
                 print("\(TodoPersistentStorageError.saveContextError.localizedDescription): \(error)")
             }
         }
-    }    
+    }
+    
+    func todo(for id: UUID, completion: @escaping (Todo?) -> Void) {
+        coreDataStack.storeContainer.performBackgroundTask { context in
+            let fetchRequest: NSFetchRequest<TodoPersistent> = TodoPersistent.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id.uuidString)
+            
+            guard
+                let matches = try? context.fetch(fetchRequest),
+                let object = matches.first
+            else {
+                print("\(TodoPersistentStorageError.fetchingError.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            do {
+                completion(try object.toTodo())
+            } catch {
+                print("\(TodoPersistentStorageError.transformationError.localizedDescription)")
+                completion(nil)
+                return
+            }
+        }
+    }
 }
 
 //TODO: add tests

@@ -12,4 +12,5 @@ protocol TodoListViewModeling {
     var sections: Dynamic<[WeekSection]> { get }
     func addTodo()
     func removeTodo(id: UUID)
+    func completeTodo(id: UUID)
 }

@@ -14,6 +14,8 @@ class TodoCell: UITableViewCell {
     private let completeButton = UIButton()
     private let priorityImage = UIImageView()
     
+    private var completeAction: (() -> Void)?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         customInit()
@@ -29,6 +31,7 @@ class TodoCell: UITableViewCell {
         setupConstraints()
         nameLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         nameLabel.textColor = Colors.primaryColor
+        completeButton.addTarget(self, action: #selector(completeButtonTapped), for: .touchUpInside)
     }
     
     private func setupConstraints() {
@@ -53,7 +56,12 @@ class TodoCell: UITableViewCell {
         ])
     }
     
-    func configure(name: String, priority: Priority, isCompleted: Bool, isOverdue: Bool) {
+    func configure(name: String,
+                   priority: Priority,
+                   isCompleted: Bool,
+                   isOverdue: Bool,
+                   completeAction: @escaping () -> Void) {
+        
         nameLabel.text = name
         
         switch priority {
@@ -66,8 +74,15 @@ class TodoCell: UITableViewCell {
         }
         
         completeButton.setImage(isCompleted ? #imageLiteral(resourceName: "ic_checked") : #imageLiteral(resourceName: "ic_unchecked"), for: .normal)
-        
+        completeButton.isUserInteractionEnabled = !isCompleted
+    
         nameLabel.textColor = isOverdue ?
             Colors.primaryColor.withAlphaComponent(0.5) : Colors.primaryColor
+        
+        self.completeAction = completeAction
+    }
+    
+    @objc private func completeButtonTapped() {
+        completeAction?()
     }
 }

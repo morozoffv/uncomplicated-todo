@@ -13,4 +13,5 @@ protocol TodoPersistentStoraging {
     func remove(for id: UUID)
     func update(for id: UUID, name: String, priority: Priority, dueDate: Date?, creationDate: Date, completedDate: Date?)
     func getAll(completion: @escaping ([Todo]) -> Void)
+    func todo(for id: UUID, completion: @escaping (Todo?) -> Void)
 }
