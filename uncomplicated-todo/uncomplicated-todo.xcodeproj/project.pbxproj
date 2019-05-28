@@ -45,7 +45,6 @@
 		F5ECC0802293E2EC00FF9DFB /* TodoStoraging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F507521A2274CA1700347361 /* TodoStoraging.swift */; };
 		F5ECC0812293E5C300FF9DFB /* Bindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F1CF8E22815089005F7686 /* Bindings.swift */; };
 		F5ECC0832293ECEE00FF9DFB /* WeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */; };
-		F5ECC0842293ECEE00FF9DFB /* WeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */; };
 		F5ECC0862293F93700FF9DFB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0852293F93700FF9DFB /* DateUtils.swift */; };
 		F5ECC0872293F93700FF9DFB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC0852293F93700FF9DFB /* DateUtils.swift */; };
 		F5ECC08B2294229C00FF9DFB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC08A2294229C00FF9DFB /* Colors.swift */; };
@@ -483,7 +482,6 @@
 				F5E1D84D22918F99006E6392 /* Todo.swift in Sources */,
 				F5ECC07E2293E0FD00FF9DFB /* TodoListViewModel.swift in Sources */,
 				F5ECC0802293E2EC00FF9DFB /* TodoStoraging.swift in Sources */,
-				F5ECC0842293ECEE00FF9DFB /* WeekdayCell.swift in Sources */,
 				F5ECC0812293E5C300FF9DFB /* Bindings.swift in Sources */,
 				F5FB9B712292EA7200354F8C /* WeekRangeBuilder.swift in Sources */,
 				F5E1D84F22919D9C006E6392 /* TodoListItem.swift in Sources */,

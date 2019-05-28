@@ -109,10 +109,12 @@ class TodoListTests: XCTestCase {
     lazy var expectedSections: [WeekSection] = [
         WeekSection(items: latestSectionTodoItems,
                     weekStartEnd: DateUtils.dayMonths(from: self.date(from: "2019-05-13T00:00:00+0000")...self.date(from: "2019-05-19T00:00:00+0000")),
-                    todoNumber: 4),
+                    todoNumber: 4,
+                    isOverdue: true),
         WeekSection(items: earliestSectionTodoItems,
                     weekStartEnd: DateUtils.dayMonths(from: self.date(from: "2019-04-29T00:00:00+0000")...self.date(from: "2019-05-05T00:00:00+0000")),
-                    todoNumber: 5)
+                    todoNumber: 5,
+                    isOverdue: true)
     ]
     
     private lazy var viewModel: TodoListViewModeling = {
