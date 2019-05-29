@@ -28,6 +28,14 @@ class Container {
         return TodoListViewModel(todoStorage: todoStorage, weekRangeBuilder: WeekRangeBuilder(calendar: Calendar.current))
     }
     
+    func makeTodoEditViewModel(todo: Todo) -> TodoEditViewModeling {
+        return TodoEditViewModel(todo: todo, todoStorage: todoStorage)
+    }
+    
+    func makeTodoAddViewModel() -> TodoEditViewModeling {
+        return TodoAddViewModel(todoStorage: todoStorage)
+    }
+    
     //TODO: remove these later
     private lazy var subject11 = Todo(id: UUID(), name: "11, order: 4", priority: .high,
                                       dueDate: self.date(from: "2019-05-13T00:00:00+0000"),

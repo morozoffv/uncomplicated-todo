@@ -24,6 +24,9 @@
 		F507521B2274CA1700347361 /* TodoStoraging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F507521A2274CA1700347361 /* TodoStoraging.swift */; };
 		F5085B1A227395FB00144515 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B19227395FB00144515 /* User.swift */; };
 		F5085B1D2273A91200144515 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5085B1C2273A91200144515 /* Parser.swift */; };
+		F5623DFE229DAF6500A3F828 /* TodoEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5623DFB229DAF6500A3F828 /* TodoEditViewModel.swift */; };
+		F5623DFF229DAF6500A3F828 /* TodoEditViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5623DFC229DAF6500A3F828 /* TodoEditViewModeling.swift */; };
+		F5623E00229DAF6500A3F828 /* TodoAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5623DFD229DAF6500A3F828 /* TodoAddViewModel.swift */; };
 		F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5987502226F96B1007E93E4 /* AppDelegate.swift */; };
 		F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5987509226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld */; };
 		F598750D226F96B3007E93E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F598750C226F96B3007E93E4 /* Assets.xcassets */; };
@@ -37,6 +40,7 @@
 		F5E1D84D22918F99006E6392 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50066E12275EB64000569A5 /* Todo.swift */; };
 		F5E1D84E22919D9A006E6392 /* WeekSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D84722918976006E6392 /* WeekSection.swift */; };
 		F5E1D84F22919D9C006E6392 /* TodoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8452291892B006E6392 /* TodoListItem.swift */; };
+		F5E9A521229E43FC005A8FC7 /* TodoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9A520229E43FC005A8FC7 /* TodoEditViewController.swift */; };
 		F5EAD80E22880E18009F9184 /* DateSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAD80D22880E18009F9184 /* DateSectionView.swift */; };
 		F5ECC07C2293E09600FF9DFB /* TodoStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC07B2293E09500FF9DFB /* TodoStorageMock.swift */; };
 		F5ECC07D2293E09600FF9DFB /* TodoStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC07B2293E09500FF9DFB /* TodoStorageMock.swift */; };
@@ -88,6 +92,9 @@
 		F507521A2274CA1700347361 /* TodoStoraging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoStoraging.swift; sourceTree = "<group>"; };
 		F5085B19227395FB00144515 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F5085B1C2273A91200144515 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		F5623DFB229DAF6500A3F828 /* TodoEditViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoEditViewModel.swift; sourceTree = "<group>"; };
+		F5623DFC229DAF6500A3F828 /* TodoEditViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoEditViewModeling.swift; sourceTree = "<group>"; };
+		F5623DFD229DAF6500A3F828 /* TodoAddViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoAddViewModel.swift; sourceTree = "<group>"; };
 		F59874FF226F96B0007E93E4 /* uncomplicated-todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uncomplicated-todo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5987502226F96B1007E93E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F598750A226F96B1007E93E4 /* uncomplicated_todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uncomplicated_todo.xcdatamodel; sourceTree = "<group>"; };
@@ -102,6 +109,7 @@
 		F5E1D8452291892B006E6392 /* TodoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListItem.swift; sourceTree = "<group>"; };
 		F5E1D84722918976006E6392 /* WeekSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSection.swift; sourceTree = "<group>"; };
 		F5E1D849229189BA006E6392 /* TodoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTests.swift; sourceTree = "<group>"; };
+		F5E9A520229E43FC005A8FC7 /* TodoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditViewController.swift; sourceTree = "<group>"; };
 		F5EAD80D22880E18009F9184 /* DateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionView.swift; sourceTree = "<group>"; };
 		F5ECC07B2293E09500FF9DFB /* TodoStorageMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoStorageMock.swift; sourceTree = "<group>"; };
 		F5ECC0822293ECEE00FF9DFB /* WeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCell.swift; sourceTree = "<group>"; };
@@ -156,6 +164,7 @@
 		F5049645227234AA007743CA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F5623DFA229DAF3C00A3F828 /* TodoEdit+Add */,
 				F53718492292EEA100F82A42 /* Utils */,
 				F5E1D8442291891C006E6392 /* TodoList */,
 			);
@@ -165,6 +174,7 @@
 		F5049646227234BF007743CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F5E9A51F229E43DD005A8FC7 /* TodoEdit+Add */,
 				F5ECC0892294207600FF9DFB /* TodoList */,
 				F50221632284839700B2689D /* RootViewController.swift */,
 			);
@@ -224,6 +234,16 @@
 				F5ECC0852293F93700FF9DFB /* DateUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F5623DFA229DAF3C00A3F828 /* TodoEdit+Add */ = {
+			isa = PBXGroup;
+			children = (
+				F5623DFD229DAF6500A3F828 /* TodoAddViewModel.swift */,
+				F5623DFB229DAF6500A3F828 /* TodoEditViewModel.swift */,
+				F5623DFC229DAF6500A3F828 /* TodoEditViewModeling.swift */,
+			);
+			path = "TodoEdit+Add";
 			sourceTree = "<group>";
 		};
 		F59874F6226F96B0007E93E4 = {
@@ -299,6 +319,14 @@
 				F5E1D84722918976006E6392 /* WeekSection.swift */,
 			);
 			path = TodoList;
+			sourceTree = "<group>";
+		};
+		F5E9A51F229E43DD005A8FC7 /* TodoEdit+Add */ = {
+			isa = PBXGroup;
+			children = (
+				F5E9A520229E43FC005A8FC7 /* TodoEditViewController.swift */,
+			);
+			path = "TodoEdit+Add";
 			sourceTree = "<group>";
 		};
 		F5ECC0892294207600FF9DFB /* TodoList */ = {
@@ -447,6 +475,7 @@
 				F5085B1D2273A91200144515 /* Parser.swift in Sources */,
 				F50752142274A85700347361 /* Container.swift in Sources */,
 				F5E1D8462291892B006E6392 /* TodoListItem.swift in Sources */,
+				F5E9A521229E43FC005A8FC7 /* TodoEditViewController.swift in Sources */,
 				F5EECE2C22829895001BEAC1 /* TodoListViewModel.swift in Sources */,
 				F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */,
 				F5ECC07C2293E09600FF9DFB /* TodoStorageMock.swift in Sources */,
@@ -457,6 +486,7 @@
 				F5ECC0862293F93700FF9DFB /* DateUtils.swift in Sources */,
 				F50221642284839700B2689D /* RootViewController.swift in Sources */,
 				F5EECE332282A16A001BEAC1 /* Coordinator.swift in Sources */,
+				F5623E00229DAF6500A3F828 /* TodoAddViewModel.swift in Sources */,
 				F5E1D84822918976006E6392 /* WeekSection.swift in Sources */,
 				F5E0B9BE227CA14C00D70618 /* CoreDataStack.swift in Sources */,
 				F5ECC08B2294229C00FF9DFB /* Colors.swift in Sources */,
@@ -464,7 +494,9 @@
 				F5EAD80E22880E18009F9184 /* DateSectionView.swift in Sources */,
 				F507521B2274CA1700347361 /* TodoStoraging.swift in Sources */,
 				F502216122845D1B00B2689D /* SettingsStoraging.swift in Sources */,
+				F5623DFE229DAF6500A3F828 /* TodoEditViewModel.swift in Sources */,
 				F504729A2280B7E700ED3DDD /* TodoNameExamplesStorage.swift in Sources */,
+				F5623DFF229DAF6500A3F828 /* TodoEditViewModeling.swift in Sources */,
 				F5F1CF8F22815089005F7686 /* Bindings.swift in Sources */,
 				F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */,
 				F5E0B9BB227C772E00D70618 /* UIViewUtils.swift in Sources */,
