@@ -40,6 +40,9 @@
 		F5E1D84D22918F99006E6392 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50066E12275EB64000569A5 /* Todo.swift */; };
 		F5E1D84E22919D9A006E6392 /* WeekSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D84722918976006E6392 /* WeekSection.swift */; };
 		F5E1D84F22919D9C006E6392 /* TodoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8452291892B006E6392 /* TodoListItem.swift */; };
+		F5E91366229F02A700A237F1 /* TodoEditNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E91365229F02A700A237F1 /* TodoEditNameCell.swift */; };
+		F5E91368229F02BA00A237F1 /* TodoEditDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E91367229F02BA00A237F1 /* TodoEditDateCell.swift */; };
+		F5E9136A229F02D700A237F1 /* TodoEditPriorityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E91369229F02D700A237F1 /* TodoEditPriorityCell.swift */; };
 		F5E9A521229E43FC005A8FC7 /* TodoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9A520229E43FC005A8FC7 /* TodoEditViewController.swift */; };
 		F5EAD80E22880E18009F9184 /* DateSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAD80D22880E18009F9184 /* DateSectionView.swift */; };
 		F5ECC07C2293E09600FF9DFB /* TodoStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ECC07B2293E09500FF9DFB /* TodoStorageMock.swift */; };
@@ -109,6 +112,9 @@
 		F5E1D8452291892B006E6392 /* TodoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListItem.swift; sourceTree = "<group>"; };
 		F5E1D84722918976006E6392 /* WeekSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSection.swift; sourceTree = "<group>"; };
 		F5E1D849229189BA006E6392 /* TodoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTests.swift; sourceTree = "<group>"; };
+		F5E91365229F02A700A237F1 /* TodoEditNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditNameCell.swift; sourceTree = "<group>"; };
+		F5E91367229F02BA00A237F1 /* TodoEditDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditDateCell.swift; sourceTree = "<group>"; };
+		F5E91369229F02D700A237F1 /* TodoEditPriorityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditPriorityCell.swift; sourceTree = "<group>"; };
 		F5E9A520229E43FC005A8FC7 /* TodoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditViewController.swift; sourceTree = "<group>"; };
 		F5EAD80D22880E18009F9184 /* DateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionView.swift; sourceTree = "<group>"; };
 		F5ECC07B2293E09500FF9DFB /* TodoStorageMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoStorageMock.swift; sourceTree = "<group>"; };
@@ -325,6 +331,9 @@
 			isa = PBXGroup;
 			children = (
 				F5E9A520229E43FC005A8FC7 /* TodoEditViewController.swift */,
+				F5E91367229F02BA00A237F1 /* TodoEditDateCell.swift */,
+				F5E91365229F02A700A237F1 /* TodoEditNameCell.swift */,
+				F5E91369229F02D700A237F1 /* TodoEditPriorityCell.swift */,
 			);
 			path = "TodoEdit+Add";
 			sourceTree = "<group>";
@@ -469,14 +478,17 @@
 				F5F121DB227D7EF6006BE4E4 /* TodoPersistentStoraging.swift in Sources */,
 				F502215F22845D0E00B2689D /* SettingsStorage.swift in Sources */,
 				F504964A2272C1AC007743CA /* NetworkManaging.swift in Sources */,
+				F5E9136A229F02D700A237F1 /* TodoEditPriorityCell.swift in Sources */,
 				F5068F1C22722B0100BEC973 /* Network.swift in Sources */,
 				F5ECC08D229423B200FF9DFB /* UIColorUtils.swift in Sources */,
 				F50752172274C9F800347361 /* TodoStorage.swift in Sources */,
 				F5085B1D2273A91200144515 /* Parser.swift in Sources */,
 				F50752142274A85700347361 /* Container.swift in Sources */,
+				F5E91366229F02A700A237F1 /* TodoEditNameCell.swift in Sources */,
 				F5E1D8462291892B006E6392 /* TodoListItem.swift in Sources */,
 				F5E9A521229E43FC005A8FC7 /* TodoEditViewController.swift in Sources */,
 				F5EECE2C22829895001BEAC1 /* TodoListViewModel.swift in Sources */,
+				F5E91368229F02BA00A237F1 /* TodoEditDateCell.swift in Sources */,
 				F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */,
 				F5ECC07C2293E09600FF9DFB /* TodoStorageMock.swift in Sources */,
 				F5F121D9227D7ECB006BE4E4 /* TodoPersistentStorage.swift in Sources */,

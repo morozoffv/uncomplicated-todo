@@ -8,8 +8,8 @@
 
 import UIKit
 
-class TodoEditViewController: UIViewController {
-    
+class TodoEditViewController: UITableViewController {
+
     private let viewModel: TodoEditViewModeling
     
     init(viewModel: TodoEditViewModeling) {
@@ -20,4 +20,6 @@ class TodoEditViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
 }
