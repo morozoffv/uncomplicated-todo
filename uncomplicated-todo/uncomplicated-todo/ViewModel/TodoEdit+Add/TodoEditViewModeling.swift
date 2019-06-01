@@ -16,7 +16,10 @@ protocol TodoEditViewModeling {
     var items: [TodoEditItem] { get }
     var title: String { get }
     var rightBarButtonTitle: String { get }
-    var editedTodo: Todo? { get }
+    
+    var name: String { get }
+    var dueDate: Date { get }
+    var priority: Priority { get }
     
     func rightBarButtonTapped()
     func setName(_ name: String)

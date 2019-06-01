@@ -16,9 +16,9 @@ class TodoAddViewModel: TodoEditViewModeling {
     let rightBarButtonTitle: String = "Add"
     let editedTodo: Todo? = nil
     
-    private var name: String?
-    private var dueDate: Date?
-    private var priority: Priority?
+    private(set) var name: String = ""
+    private(set) var dueDate: Date = Date()
+    private(set) var priority: Priority = .high
     
     private let todoStorage: TodoStoraging
 
@@ -28,10 +28,7 @@ class TodoAddViewModel: TodoEditViewModeling {
     
     func rightBarButtonTapped() {
         //TODO: disable button if some data is not set
-        guard let name = name,
-            let priority = priority,
-            let dueDate = dueDate
-        else { return }
+        guard !name.isEmpty else { return }
         
         let todo = Todo(id: UUID(),
                         name: name,
@@ -55,6 +52,4 @@ class TodoAddViewModel: TodoEditViewModeling {
     func setPriority(_ priority: Priority) {
         self.priority = priority
     }
-    
-    
 }

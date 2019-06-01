@@ -14,14 +14,14 @@ class TodoEditViewModel: TodoEditViewModeling {
    
     let title: String = "Edit Todo"
     let rightBarButtonTitle: String = "Save"
-    let editedTodo: Todo?
     
-    private var name: String
-    private var dueDate: Date
-    private var priority: Priority
+    private(set) var name: String
+    private(set) var dueDate: Date
+    private(set) var priority: Priority
     
+    private let editedTodo: Todo
     private let todoStorage: TodoStoraging
-    
+
     init(todo: Todo, todoStorage: TodoStoraging) {
         self.editedTodo = todo
         self.name = todo.name
@@ -31,15 +31,13 @@ class TodoEditViewModel: TodoEditViewModeling {
     }
     
     func rightBarButtonTapped() {
-        guard let todo = editedTodo else { return }
-        
         todoStorage.update(
-            for: todo.id,
+            for: editedTodo.id,
             name: name,
             priority: priority,
             dueDate: dueDate,
-            creationDate: todo.creationDate,
-            completedDate: todo.completedDate)
+            creationDate: editedTodo.creationDate,
+            completedDate: editedTodo.completedDate)
     }
     
     func setName(_ name: String) {

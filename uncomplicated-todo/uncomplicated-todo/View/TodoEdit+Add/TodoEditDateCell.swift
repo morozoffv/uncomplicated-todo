@@ -132,8 +132,8 @@ class TodoEditDateCell: UITableViewCell {
         dateLabel.setContentCompressionResistancePriority(UILayoutPriority(800), for: .horizontal)
     }
     
-    func configure(date: Date) {
-        self.date.value = date
+    func configure(initialDate: Date) {
+        self.date.value = initialDate
     }
     
     @objc private func datePickerChanged(picker: UIDatePicker) {

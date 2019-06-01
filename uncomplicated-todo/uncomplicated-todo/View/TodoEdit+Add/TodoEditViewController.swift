@@ -47,20 +47,20 @@ class TodoEditViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = viewModel.items[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: TodoEditDateCell.self.description(),
-            for: indexPath) as! TodoEditDateCell
+//        let cell = tableView.dequeueReusableCell(
+//            withIdentifier: TodoEditDateCell.self.description(),
+//            for: indexPath) as! TodoEditDateCell
+//
+//        cell.configure(initialDate: viewModel.dueDate)
+//        dueDateBond.bind(dynamic: cell.date)
+//        return cell
         
-        let initialDate: Date = {
-            if let editedTodo = viewModel.editedTodo {
-                return editedTodo.dueDate
-            } else {
-                return Date()
-            }
-        }()
-
-        cell.configure(date: initialDate)
-        dueDateBond.bind(dynamic: cell.date)
+        
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: TodoEditPriorityCell.self.description(),
+            for: indexPath) as! TodoEditPriorityCell
+        
+        cell.configure()
         return cell
 
         switch item {
@@ -75,5 +75,8 @@ class TodoEditViewController: UITableViewController {
     
     //MARK: Table View Delegate
     
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 
 }
