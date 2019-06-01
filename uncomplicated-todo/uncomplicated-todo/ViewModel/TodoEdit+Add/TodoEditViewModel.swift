@@ -9,6 +9,8 @@
 import Foundation
 
 class TodoEditViewModel: TodoEditViewModeling {
+    
+    let items: [TodoEditItem] = TodoEditItem.allCases
    
     let title: String = "Edit Todo"
     let rightBarButtonTitle: String = "Save"

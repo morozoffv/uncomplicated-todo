@@ -8,13 +8,18 @@
 
 import Foundation
 
+enum TodoEditItem: CaseIterable {
+    case name, date, priority
+}
+
 protocol TodoEditViewModeling {
+    var items: [TodoEditItem] { get }
     var title: String { get }
     var rightBarButtonTitle: String { get }
     var editedTodo: Todo? { get }
     
     func rightBarButtonTapped()
     func setName(_ name: String)
-    func setDueDate(_ name: Date)
+    func setDueDate(_ date: Date)
     func setPriority(_ priority: Priority)    
 }

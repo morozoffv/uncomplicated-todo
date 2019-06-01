@@ -9,6 +9,10 @@
 import UIKit
 
 class TodoEditViewController: UITableViewController {
+    
+    private lazy var dueDateBond = Bond<Date>() { [unowned self] date in
+        self.viewModel.setDueDate(date)
+    }
 
     private let viewModel: TodoEditViewModeling
     
@@ -21,5 +25,55 @@ class TodoEditViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupTableView()
+    }
     
+    private func setupTableView() {
+        tableView.isScrollEnabled = false
+        tableView.separatorStyle = .none
+        tableView.register(TodoEditDateCell.self, forCellReuseIdentifier: TodoEditDateCell.self.description())
+        tableView.register(TodoEditNameCell.self, forCellReuseIdentifier: TodoEditNameCell.self.description())
+        tableView.register(TodoEditPriorityCell.self, forCellReuseIdentifier: TodoEditPriorityCell.self.description())
+    }
+    
+    //MARK: Table View Data Source
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.items.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = viewModel.items[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: TodoEditDateCell.self.description(),
+            for: indexPath) as! TodoEditDateCell
+        
+        let initialDate: Date = {
+            if let editedTodo = viewModel.editedTodo {
+                return editedTodo.dueDate
+            } else {
+                return Date()
+            }
+        }()
+
+        cell.configure(date: initialDate)
+        dueDateBond.bind(dynamic: cell.date)
+        return cell
+
+        switch item {
+        case .name:
+            break
+        case .date:
+            break
+        case .priority:
+            break
+        }
+    }
+    
+    //MARK: Table View Delegate
+    
+
 }

@@ -61,7 +61,7 @@ class TodoListViewController: UITableViewController {
     
     @objc func addTodo() {
         viewModel.addTodo()
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
     
     //MARK: Table View Data Source
@@ -127,7 +127,7 @@ class TodoListViewController: UITableViewController {
     }
     
     //MARK: Table View Delegate
-    
+        
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel.sections.value[indexPath.section].items[indexPath.row].height
     }

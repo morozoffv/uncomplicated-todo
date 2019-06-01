@@ -10,6 +10,8 @@ import Foundation
 
 class TodoAddViewModel: TodoEditViewModeling {
     
+    let items: [TodoEditItem] = TodoEditItem.allCases
+    
     let title: String = "Add Todo"
     let rightBarButtonTitle: String = "Add"
     let editedTodo: Todo? = nil
@@ -25,7 +27,7 @@ class TodoAddViewModel: TodoEditViewModeling {
     }
     
     func rightBarButtonTapped() {
-        //TODO: throw alert if some data in todo is not set
+        //TODO: disable button if some data is not set
         guard let name = name,
             let priority = priority,
             let dueDate = dueDate
@@ -47,6 +49,7 @@ class TodoAddViewModel: TodoEditViewModeling {
     
     func setDueDate(_ date: Date) {
         self.dueDate = date
+        print(self.dueDate)
     }
     
     func setPriority(_ priority: Priority) {
