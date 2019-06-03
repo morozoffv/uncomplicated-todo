@@ -35,7 +35,7 @@ class TodoEditPriorityCell: UITableViewCell {
         imageForNotSelected: #imageLiteral(resourceName: "ic_low_priority"),
         imageForSelected: #imageLiteral(resourceName: "ic_low_priority_selected"))
     
-    private lazy var buttonsStackView: UIStackView = {
+    private lazy var togglesStackView: UIStackView = {
         let toggles = [highPriorityToggle, mediumPriorityToggle, lowPriorityToggle]
         
         toggles.forEach { toggle in
@@ -67,7 +67,7 @@ class TodoEditPriorityCell: UITableViewCell {
     }
     
     private func customInit() {
-        addSubviews(titleLabel, buttonsStackView, separator)
+        addSubviews(titleLabel, togglesStackView, separator)
         setupConstraints()
     }
     
@@ -75,14 +75,14 @@ class TodoEditPriorityCell: UITableViewCell {
         titleLabel.activateConstraints([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: buttonsStackView.leadingAnchor, constant: -16)
+            titleLabel.trailingAnchor.constraint(equalTo: togglesStackView.leadingAnchor, constant: -16)
         ])
         
-        buttonsStackView.activateConstraints([
-            buttonsStackView.heightAnchor.constraint(equalToConstant: 88),
-            buttonsStackView.topAnchor.constraint(equalTo: topAnchor),
-            buttonsStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            buttonsStackView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        togglesStackView.activateConstraints([
+            togglesStackView.heightAnchor.constraint(equalToConstant: 88),
+            togglesStackView.topAnchor.constraint(equalTo: topAnchor),
+            togglesStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            togglesStackView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
         
         separator.activateConstraints([
@@ -94,6 +94,50 @@ class TodoEditPriorityCell: UITableViewCell {
     }
     
     func configure() {
+        
+    }
+}
+
+private class PriorityControl: UIStackView {
+    
+    private let highPriorityToggle = PriorityToggle(
+        title: "High",
+        imageForNotSelected: #imageLiteral(resourceName: "ic_high_priority"),
+        imageForSelected: #imageLiteral(resourceName: "ic_high_priority_selected"))
+    
+    private let mediumPriorityToggle = PriorityToggle(
+        title: "Medium",
+        imageForNotSelected: #imageLiteral(resourceName: "ic_medium_priority"),
+        imageForSelected: #imageLiteral(resourceName: "ic_medium_priority_selected"))
+    
+    private let lowPriorityToggle = PriorityToggle(
+        title: "Low",
+        imageForNotSelected: #imageLiteral(resourceName: "ic_low_priority"),
+        imageForSelected: #imageLiteral(resourceName: "ic_low_priority_selected"))
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customInit()
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func customInit() {
+        axis = .horizontal
+        let toggles = [highPriorityToggle, mediumPriorityToggle, lowPriorityToggle]
+        
+        toggles.forEach { toggle in
+            toggle.activateConstraints([
+                toggle.heightAnchor.constraint(equalToConstant: 88),
+                toggle.widthAnchor.constraint(equalToConstant: 80)
+            ])
+            
+            addArrangedSubview(toggle)
+        }
+        
+        
         
     }
 }
