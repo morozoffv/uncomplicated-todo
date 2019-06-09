@@ -10,6 +10,10 @@ import UIKit
 
 class TodoEditViewController: UITableViewController {
     
+    private lazy var nameBond = Bond<String>() { [unowned self] name in
+        self.viewModel.setName(name)
+    }
+    
     private lazy var dueDateBond = Bond<Date>() { [unowned self] date in
         self.viewModel.setDueDate(date)
     }
@@ -52,13 +56,22 @@ class TodoEditViewController: UITableViewController {
         let item = viewModel.items[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: TodoEditPriorityCell.self.description(),
-            for: indexPath) as! TodoEditPriorityCell
-
-        priorityBond.bind(dynamic: cell.selectedPriority)
-
-        cell.configure(priority: .high)
+            withIdentifier: TodoEditNameCell.self.description(),
+            for: indexPath) as! TodoEditNameCell
+        
+        nameBond.bind(dynamic: cell.name)
+        
+        cell.configure(name: viewModel.name, maxCharacters: viewModel.nameLength)
         return cell
+        
+//        let cell = tableView.dequeueReusableCell(
+//            withIdentifier: TodoEditPriorityCell.self.description(),
+//            for: indexPath) as! TodoEditPriorityCell
+//
+//        priorityBond.bind(dynamic: cell.selectedPriority)
+//
+//        cell.configure(priority: .high)
+//        return cell
         
 //        let cell = tableView.dequeueReusableCell(
 //            withIdentifier: TodoEditDateCell.self.description(),

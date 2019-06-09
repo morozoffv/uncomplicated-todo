@@ -41,7 +41,7 @@ class TodoAddViewModel: TodoEditViewModeling {
     }
     
     func setName(_ name: String) {
-        self.name = name
+        self.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
         print(self.name)
     }
     

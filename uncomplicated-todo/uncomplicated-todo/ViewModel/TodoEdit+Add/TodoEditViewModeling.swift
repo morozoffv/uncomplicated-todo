@@ -26,3 +26,9 @@ protocol TodoEditViewModeling {
     func setDueDate(_ date: Date)
     func setPriority(_ priority: Priority)    
 }
+
+extension TodoEditViewModeling {
+    var nameLength: Int {
+        return 100
+    }
+}

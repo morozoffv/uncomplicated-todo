@@ -16,6 +16,15 @@ extension UIView {
         NSLayoutConstraint.activate(constraints)
     }
     
+    func matchConstraints(to view: UIView) {
+        activateConstraints([
+            leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topAnchor.constraint(equalTo: view.topAnchor),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
     func addSubviews(_ views: UIView...) {
         views.forEach { self.addSubview($0) }
     }
