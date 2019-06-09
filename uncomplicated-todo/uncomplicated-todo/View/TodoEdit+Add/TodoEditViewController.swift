@@ -10,6 +10,18 @@ import UIKit
 
 class TodoEditViewController: UITableViewController {
     
+    private lazy var rightBarButton = UIBarButtonItem(
+        title: viewModel.rightBarButtonTitle,
+        style: .done,
+        target: self,
+        action: #selector(rightBarButtonTapped))
+    
+    private lazy var cancelButton = UIBarButtonItem(
+        title: "Cancel",
+        style: .plain,
+        target: self,
+        action: #selector(cancelButtonTapped))
+    
     private lazy var nameBond = Bond<String>() { [unowned self] name in
         self.viewModel.setName(name)
     }
@@ -35,15 +47,30 @@ class TodoEditViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setupTableView()
     }
     
+    private func setupNavigationBar() {
+        title = viewModel.title
+        navigationItem.rightBarButtonItem = rightBarButton
+        navigationItem.leftBarButtonItem = cancelButton
+    }
+    
     private func setupTableView() {
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = true
         tableView.separatorStyle = .none
         tableView.register(TodoEditDateCell.self, forCellReuseIdentifier: TodoEditDateCell.self.description())
         tableView.register(TodoEditNameCell.self, forCellReuseIdentifier: TodoEditNameCell.self.description())
         tableView.register(TodoEditPriorityCell.self, forCellReuseIdentifier: TodoEditPriorityCell.self.description())
+    }
+    
+    @objc private func rightBarButtonTapped() {
+        viewModel.rightBarButtonTapped()
+    }
+    
+    @objc private func cancelButtonTapped() {
+        //TODO: add cancel action
     }
     
     //MARK: Table View Data Source
@@ -54,41 +81,37 @@ class TodoEditViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = viewModel.items[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: TodoEditNameCell.self.description(),
-            for: indexPath) as! TodoEditNameCell
-        
-        nameBond.bind(dynamic: cell.name)
-        
-        cell.configure(name: viewModel.name, maxCharacters: viewModel.nameLength)
-        return cell
-        
-//        let cell = tableView.dequeueReusableCell(
-//            withIdentifier: TodoEditPriorityCell.self.description(),
-//            for: indexPath) as! TodoEditPriorityCell
-//
-//        priorityBond.bind(dynamic: cell.selectedPriority)
-//
-//        cell.configure(priority: .high)
-//        return cell
-        
-//        let cell = tableView.dequeueReusableCell(
-//            withIdentifier: TodoEditDateCell.self.description(),
-//            for: indexPath) as! TodoEditDateCell
-//
-//        dueDateBond.bind(dynamic: cell.date)
-//
-//        cell.configure(initialDate: viewModel.dueDate)
-//        return cell
 
         switch item {
         case .name:
-            break
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: TodoEditNameCell.self.description(),
+                for: indexPath) as! TodoEditNameCell
+            
+            nameBond.bind(dynamic: cell.name)
+            
+            cell.configure(name: viewModel.name, maxCharacters: viewModel.nameLength)
+            return cell
+            
         case .date:
-            break
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: TodoEditDateCell.self.description(),
+                for: indexPath) as! TodoEditDateCell
+    
+            dueDateBond.bind(dynamic: cell.date)
+    
+            cell.configure(initialDate: viewModel.dueDate)
+            return cell
+            
         case .priority:
-            break
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: TodoEditPriorityCell.self.description(),
+                for: indexPath) as! TodoEditPriorityCell
+    
+            priorityBond.bind(dynamic: cell.selectedPriority)
+    
+            cell.configure(priority: .high)
+            return cell
         }
     }
     

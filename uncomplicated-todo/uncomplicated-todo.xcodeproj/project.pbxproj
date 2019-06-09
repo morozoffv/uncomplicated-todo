@@ -27,6 +27,7 @@
 		F5623DFE229DAF6500A3F828 /* TodoEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5623DFB229DAF6500A3F828 /* TodoEditViewModel.swift */; };
 		F5623DFF229DAF6500A3F828 /* TodoEditViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5623DFC229DAF6500A3F828 /* TodoEditViewModeling.swift */; };
 		F5623E00229DAF6500A3F828 /* TodoAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5623DFD229DAF6500A3F828 /* TodoAddViewModel.swift */; };
+		F58786DD22AD66FF00B4C141 /* UINavigationBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58786DC22AD66FF00B4C141 /* UINavigationBarUtils.swift */; };
 		F5987503226F96B1007E93E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5987502226F96B1007E93E4 /* AppDelegate.swift */; };
 		F598750B226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5987509226F96B1007E93E4 /* uncomplicated_todo.xcdatamodeld */; };
 		F598750D226F96B3007E93E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F598750C226F96B3007E93E4 /* Assets.xcassets */; };
@@ -98,6 +99,7 @@
 		F5623DFB229DAF6500A3F828 /* TodoEditViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoEditViewModel.swift; sourceTree = "<group>"; };
 		F5623DFC229DAF6500A3F828 /* TodoEditViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoEditViewModeling.swift; sourceTree = "<group>"; };
 		F5623DFD229DAF6500A3F828 /* TodoAddViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoAddViewModel.swift; sourceTree = "<group>"; };
+		F58786DC22AD66FF00B4C141 /* UINavigationBarUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarUtils.swift; sourceTree = "<group>"; };
 		F59874FF226F96B0007E93E4 /* uncomplicated-todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uncomplicated-todo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5987502226F96B1007E93E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F598750A226F96B1007E93E4 /* uncomplicated_todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uncomplicated_todo.xcdatamodel; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				F5F1CF8E22815089005F7686 /* Bindings.swift */,
 				F5ECC08A2294229C00FF9DFB /* Colors.swift */,
 				F5ECC08C229423B200FF9DFB /* UIColorUtils.swift */,
+				F58786DC22AD66FF00B4C141 /* UINavigationBarUtils.swift */,
 			);
 			path = UIUtils;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				F5E0B9B9227C4AC200D70618 /* TodoCell.swift in Sources */,
 				F5E0B9BB227C772E00D70618 /* UIViewUtils.swift in Sources */,
 				F5FB9B702292EA3800354F8C /* WeekRangeBuilder.swift in Sources */,
+				F58786DD22AD66FF00B4C141 /* UINavigationBarUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,9 +12,10 @@ class TodoEditNameCell: UITableViewCell {
     
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
-        textField.tintColor = Colors.primaryColor
+        textField.tintColor = Colors.tintColor
         textField.addTarget(self, action: #selector(nameChanged), for: .editingChanged)
         textField.delegate = self
+        textField.defaultTextAttributes = [.foregroundColor: Colors.primaryColor]
         return textField
     }()
     
@@ -40,6 +41,7 @@ class TodoEditNameCell: UITableViewCell {
     private func customInit() {
         addSubviews(nameTextField, separator)
         setupConstraints()
+        nameTextField.becomeFirstResponder()
     }
     
     private func setupConstraints() {
@@ -60,9 +62,16 @@ class TodoEditNameCell: UITableViewCell {
     }
     
     func configure(name: String, maxCharacters: Int) {
-        //TODO: add placeholder from storage
-        nameTextField.placeholder = name.isEmpty ? "Name, e.g. \"Do the best\"" : name
+        setNameTextFieldPlaceholder("Name, e.g. \"Do the best\"")
+        nameTextField.text = name
         self.maxCharacters = maxCharacters
+    }
+    
+    private func setNameTextFieldPlaceholder(_ placeholder: String) {
+        //TODO: add placeholder from storage
+        nameTextField.attributedPlaceholder = NSAttributedString(
+            string: placeholder,
+            attributes: [.foregroundColor: Colors.primaryColor.withAlphaComponent(0.25)])
     }
     
     @objc private func nameChanged() {
@@ -70,7 +79,7 @@ class TodoEditNameCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        self.prepareForReuse()
+        super.prepareForReuse()
         name.bonds = []
     }
 }
@@ -83,5 +92,10 @@ extension TodoEditNameCell: UITextFieldDelegate {
         let substringToReplace = textFieldText[rangeOfTextToReplace]
         let count = textFieldText.count - substringToReplace.count + string.count
         return count <= maxCharacters
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        return true
     }
 }
