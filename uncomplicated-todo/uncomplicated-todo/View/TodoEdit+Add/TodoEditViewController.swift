@@ -58,7 +58,6 @@ class TodoEditViewController: UITableViewController {
     }
     
     private func setupTableView() {
-        tableView.isScrollEnabled = true
         tableView.separatorStyle = .none
         tableView.register(TodoEditDateCell.self, forCellReuseIdentifier: TodoEditDateCell.self.description())
         tableView.register(TodoEditNameCell.self, forCellReuseIdentifier: TodoEditNameCell.self.description())
@@ -110,7 +109,7 @@ class TodoEditViewController: UITableViewController {
     
             priorityBond.bind(dynamic: cell.selectedPriority)
     
-            cell.configure(priority: .high)
+            cell.configure(priority: viewModel.priority)
             return cell
         }
     }
