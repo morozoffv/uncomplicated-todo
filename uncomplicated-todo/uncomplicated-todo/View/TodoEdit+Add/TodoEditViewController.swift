@@ -13,7 +13,11 @@ class TodoEditViewController: UITableViewController {
     private lazy var dueDateBond = Bond<Date>() { [unowned self] date in
         self.viewModel.setDueDate(date)
     }
-
+    
+    private lazy var priorityBond = Bond<Priority>() { [unowned self] priority in
+        self.viewModel.setPriority(priority)
+    }
+    
     private let viewModel: TodoEditViewModeling
     
     init(viewModel: TodoEditViewModeling) {
@@ -47,21 +51,23 @@ class TodoEditViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = viewModel.items[indexPath.row]
         
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: TodoEditPriorityCell.self.description(),
+            for: indexPath) as! TodoEditPriorityCell
+
+        priorityBond.bind(dynamic: cell.selectedPriority)
+
+        cell.configure(priority: .high)
+        return cell
+        
 //        let cell = tableView.dequeueReusableCell(
 //            withIdentifier: TodoEditDateCell.self.description(),
 //            for: indexPath) as! TodoEditDateCell
 //
-//        cell.configure(initialDate: viewModel.dueDate)
 //        dueDateBond.bind(dynamic: cell.date)
+//
+//        cell.configure(initialDate: viewModel.dueDate)
 //        return cell
-        
-        
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: TodoEditPriorityCell.self.description(),
-            for: indexPath) as! TodoEditPriorityCell
-        
-        cell.configure()
-        return cell
 
         switch item {
         case .name:

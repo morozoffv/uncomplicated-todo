@@ -10,7 +10,7 @@ import UIKit
 
 class TodoEditDateCell: UITableViewCell {
     
-    enum Constants {
+    private enum Constants {
         static let initialDate = Date()
         static let minimumDate = Date()
     }

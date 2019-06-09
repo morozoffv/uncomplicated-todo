@@ -42,6 +42,7 @@ class TodoAddViewModel: TodoEditViewModeling {
     
     func setName(_ name: String) {
         self.name = name
+        print(self.name)
     }
     
     func setDueDate(_ date: Date) {
@@ -51,5 +52,6 @@ class TodoAddViewModel: TodoEditViewModeling {
     
     func setPriority(_ priority: Priority) {
         self.priority = priority
+        print(self.priority)
     }
 }
